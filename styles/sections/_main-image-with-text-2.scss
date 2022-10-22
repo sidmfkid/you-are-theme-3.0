@@ -1,0 +1,46 @@
+.image-with-text-2 {
+    @include section-grid;
+    @include section-margin;
+    overflow-y: visible;
+    place-items: center;
+    position: relative;
+    z-index: 5;
+
+    &__text-content {
+        // @include left-section;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+    }
+    &__title {
+        width: 100%;
+        h2 {
+            @include page-title;
+        }
+    }
+    &__para {
+        width: 100%;
+        @include page-para;
+    }
+    &__button-container {
+        width: 100%;
+    }
+    &__image-container {
+        grid-row: 1 / 2;
+        overflow: hidden;
+        min-height: 24rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: drop-shadow(0px 9px 10px rgba(0, 0, 0, 0.25));
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+    @include media-small {
+        &__image-container {
+            // margin-right: 1.6rem;
+        }
+    }
+}

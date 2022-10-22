@@ -1,0 +1,44 @@
+<div class="activate">
+  {% form 'activate_customer_password', class: 'activate__container', id: 'customerActivate' %}
+    <div class="activate__field-container">
+      <label for="password" class="activate__password-label">Password</label>
+      <input name="customer[password]" id="password" type="password" class="activate__password-input">
+      {% render 'error-message', type: 'password-error', message: 'Password must be over 8 characters long' %}
+      {% render 'success-message', type: 'password-success' %}
+    </div>
+    <div class="activate__field-container">
+      <label for="password" class="activate__password-label">Confirm Password</label>
+      <input
+        name="customer[password_confirmation]"
+        id="passwordConfirmation"
+        type="password"
+        class="activate__password-input"
+      >
+
+      {% render 'error-message', type: 'password_confirmation-error', message: 'Passwords must match' %}
+      {% render 'success-message', type: 'password_confirmation-success' %}
+      {{ form.errors | default_errors }}
+    </div>
+    <div class="activate__submit">
+      <button id="activateAccept" type="submit" class="btn btn-primary" value="activate">Activate</button>
+      <button id="activateDecline" type="submit" class="btn btn-primary" value="decline">Decline</button>
+    </div>
+  {% endform %}
+  {% comment %}
+  {% endcomment %}
+</div>
+
+<script defer src="{{ 'activate.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Activate",
+  "class": "section-activate",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Activate"
+    }
+  ]
+}
+{% endschema %}

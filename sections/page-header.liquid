@@ -1,0 +1,45 @@
+{% if request.page_type == 'product' %}
+{% elsif request.page_type == 'page' %}
+  {% comment %} {% elsif request.page_type == 'page' %} {% endcomment %}
+{% endif %}
+
+{%- assign t = template | split: '.' | first -%}
+{%- case t -%}
+  {%- when 'page' -%}
+    {%- assign title = page.title -%}
+  {%- when 'product' -%}
+    {%- assign title = product.title -%}
+  {%- when 'collection' and collection.handle -%}
+    {%- assign title = collection.title -%}
+  {%- when 'blog' -%}
+    {%- assign title = blog.title -%}
+  {%- when 'article' -%}
+    {%- assign title = article.title -%}
+  {%- else -%}
+    {%- assign title = page_title -%}
+{%- endcase -%}
+
+<div class="page-header">
+  <div class="page-header__container">
+    <div class="page-header__title-container">
+      <h1 class="title">
+        {{ title }}
+      </h1>
+      <div class="page-header__divider"></div>
+    </div>
+  </div>
+  {% render 'breadcrumbs' %}
+</div>
+
+{% schema %}
+{
+  "name": "Page Header",
+  "class": "section-page-header",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Page Header"
+    }
+  ]
+}
+{% endschema %}

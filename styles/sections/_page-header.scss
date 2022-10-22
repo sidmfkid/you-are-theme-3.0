@@ -1,0 +1,62 @@
+.section-page-header {
+    @include section-margin;
+}
+
+.page-header {
+    @include section-grid;
+    // @include section-padding;
+    &__container {
+        @include section-container;
+    }
+    &__title-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 0.8rem;
+        h1 {
+            width: 100%;
+        }
+    }
+    &__divider {
+        height: 3px;
+        min-width: 5rem;
+        background-color: $dark-yellow-800;
+    }
+    &__breadcrumbs {
+        width: 100%;
+        @include section-container;
+
+        &-list {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        &-link {
+            // display: block;
+            line-height: 2rem;
+            // height: min-content;
+            font-family: var(--font-heading-family);
+            color: $dark-yellow-800;
+            font-size: 2rem;
+            &:link:active,
+            &:active,
+            &.active {
+                color: $green-600;
+            }
+        }
+        .crumb-icon {
+            line-height: 2rem;
+            color: $dark-yellow-800;
+
+            font-size: 2.5rem;
+        }
+    }
+    @include media-small {
+        &__breadcrumbs {
+            padding: 0 1.6rem;
+            margin: 0 0rem;
+        }
+    }
+}

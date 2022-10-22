@@ -1,0 +1,190 @@
+.section-hero {
+    overflow: hidden;
+    @include section-margin;
+}
+
+.hero {
+    @include section-grid;
+    height: fit-content;
+    place-items: center;
+    &__title {
+        @include page-title-xl;
+
+        &-first {
+            position: relative;
+            display: block;
+            width: min-content;
+
+            .lines {
+                position: absolute;
+                top: 10px;
+                right: -20px;
+            }
+            .dotted-lines {
+                position: absolute;
+                top: 38px;
+                left: 100%;
+            }
+            .dotted-lines-tablet {
+                position: absolute;
+                top: 40px;
+                left: 98%;
+                display: none;
+            }
+        }
+        &-last {
+            display: block;
+            width: min-content;
+        }
+    }
+
+    &__button-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__description {
+        @include page-para;
+    }
+    &__text-content {
+        grid-column: 2 / 8;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 5.6rem;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+        height: min-content;
+    }
+    &__image-container {
+        grid-column: 8 / 15;
+        // height: 44rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 100px 0 0 100px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .dotted-lines-small {
+        display: none;
+    }
+    @include media-tablet {
+        &__text-content {
+            grid-column: 2 / 5;
+        }
+        &__image-container {
+            grid-column: 5 / 9;
+        }
+        &__title {
+            &-first {
+                .dotted-lines {
+                    display: none;
+                }
+                .dotted-lines-tablet {
+                    position: absolute;
+                    top: 38px;
+                    left: 105%;
+                    display: block;
+                }
+                .lines {
+                    position: absolute;
+                    top: 10px;
+                    right: -20px;
+                }
+            }
+        }
+    }
+    @include media-medium {
+        &__image-container {
+            grid-column: 5 / 8;
+            border-radius: 20px 100px 20px 100px;
+            // height: 44rem;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        &__title {
+            &-first {
+                font-size: font-size(large);
+                .lines {
+                    position: absolute;
+                    top: 10px;
+                    right: -20px;
+                }
+                .dotted-lines {
+                    display: none;
+                }
+                .dotted-lines-tablet {
+                    position: absolute;
+                    top: 38px;
+                    left: 105%;
+                    display: block;
+                    width: calc(25rem + 10vw);
+                }
+                .dotted-lines-small {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include media-small {
+        @include section-padding;
+        &__text-content {
+            grid-column: 1 / 7;
+            order: 2;
+            gap: 2.4rem;
+            display: block;
+        }
+
+        &__image-container {
+            grid-column: 1 / 7;
+            order: 1;
+            // height: 30.4rem;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        &__title {
+            height: fit-content;
+            margin-bottom: 2.4rem;
+
+            &-first {
+                font-size: font-size(xlarge);
+                .lines {
+                    position: absolute;
+                    top: 10px;
+                    right: -20px;
+                }
+                .dotted-lines {
+                    display: none;
+                }
+                .dotted-lines-tablet {
+                    display: none;
+                }
+                .dotted-lines-small {
+                    display: block;
+                    position: absolute;
+                    bottom: -5.4rem;
+                    left: 52%;
+                    width: 18rem;
+                    // width: calc(100% - 20vw);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "page-header": {
+      "type": "page-header",
+      "settings": {}
+    },
+    "page-contact": {
+      "type": "main-page-contact",
+      "settings": {}
+    }
+  },
+  "order": ["page-header", "page-contact"]
+}

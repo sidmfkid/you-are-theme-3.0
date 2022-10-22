@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "page-header": {
+      "type": "page-header",
+      "settings": {}
+    },
+    "register": {
+      "type": "main-register",
+      "settings": {}
+    }
+  },
+  "order": ["page-header", "register"]
+}

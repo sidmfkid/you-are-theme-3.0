@@ -1,0 +1,96 @@
+<div data-animate class="callout">
+  <div class="callout__text-content right">
+    <div class="callout__title">
+      <h2
+        data-animate-delay="0"
+        data-animate-text="{{ section.settings.animate_title }}"
+      >
+        {{ section.settings.heading }}
+      </h2>
+    </div>
+  </div>
+  <div class="callout__image-container right-stretch">
+    <img
+      data-animate-img="{{ section.settings.animate_img }}"
+      data-animate-delay="1"
+      src="{{ section.settings.image | image_url }}"
+      alt=""
+      class="callout__image"
+    >
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Callout",
+  "class": "section-callout",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Lets Get Started!",
+      "info": "Make it catchy!",
+      "placeholder": "Heading Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "select",
+      "id": "animate_title",
+      "label": "Text Animation",
+      "options": [
+        {
+          "value": "fadeRight",
+          "label": "Fade Right"
+        },
+        {
+          "value": "fadeLeft",
+          "label": "Fade Left"
+        },
+        {
+          "value": "fadeUp",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fadeDown",
+          "label": "Fade Down"
+        }
+      ],
+      "default": "fadeRight"
+    },
+    {
+      "type": "select",
+      "id": "animate_img",
+      "label": "Image Animation",
+      "options": [
+        {
+          "value": "fadeRight",
+          "label": "Fade Right"
+        },
+        {
+          "value": "fadeLeft",
+          "label": "Fade Left"
+        },
+        {
+          "value": "fadeUp",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fadeDown",
+          "label": "Fade Down"
+        }
+      ],
+      "default": "fadeLeft"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Callout"
+    }
+  ]
+}
+{% endschema %}

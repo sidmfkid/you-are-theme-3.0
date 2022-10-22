@@ -1,0 +1,30 @@
+<div class="activate">
+  {% form 'activate_customer_password', class: 'activate__container', id: 'customerActivate' %}
+    <div class="activate__password-container">
+      <label for="password" class="activate__password-label">password</label>
+      <input name="customer[password]" id="password" type="password" class="activate__password-input">
+    </div>
+    <div class="activate__confirm-container">
+      <label for="confirm" class="activate__confirm-label">Password</label>
+      <input name="customer[password_confirmation]" id="confirm" type="text" class="activate__confirm-input">
+    </div>
+    <div class="activate__submit">
+      <input class="btn btn-secondary" type="submit" value="Activate account">
+      <span>or</span>
+      <input class="btn btn-primary" type="submit" name="decline" value="Decline invitation">
+    </div>
+  {% endform %}
+</div>
+
+{% schema %}
+{
+  "name": "Activate-Account",
+  "class": "section-activate",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Activate"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "page-header": {
+      "type": "page-header",
+      "settings": {}
+    }
+  },
+  "order": ["page-header"]
+}

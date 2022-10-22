@@ -1,0 +1,50 @@
+<div class="register">
+  {% form 'create_customer', class: 'register__container', id: 'customerRegister' %}
+    <div class="register__field-container">
+      <label for="firstName" class="register__firstName-label">First Name</label>
+      <input name="customer[first_name]" id="firstName" type="text" class="register__firstName-input">
+      {% render 'error-message', type: 'first_name-error', message: 'Error. Please enter your first name' %}
+      {% render 'success-message', type: 'first_name-success' %}
+    </div>
+    <div class="register__field-container">
+      <label for="lastName" class="register__lastName-label">Last Name</label>
+      <input name="customer[last_name]" id="lastName" type="text" class="register__lastName-input">
+      {% render 'error-message', type: 'last_name-error', message: 'Error. Please enter your last name' %}
+      {% render 'success-message', type: 'last_name-success' %}
+    </div>
+    <div class="register__field-container">
+      <label for="company" class="register__company-label">Company</label>
+      <input name="customer[company]" id="company" type="text" class="register__company-input">
+    </div>
+    <div class="register__field-container">
+      <label for="email" class="register__email-label">Email</label>
+      <input name="customer[email]" id="email" type="text" class="register__email-input">
+      {% render 'error-message', type: 'email-error', message: 'Error. Please enter a valid email address' %}
+      {% render 'success-message', type: 'email-success' %}
+    </div>
+    <div class="register__field-container">
+      <label for="password" class="register__password-label">Password</label>
+      <input name="customer[password]" id="password" type="password" class="register__password-input">
+      {% render 'error-message', type: 'password-error', message: 'Error. Password must be over 8 characters' %}
+      {% render 'success-message', type: 'password-success' %}
+    </div>
+    <div class="register__submit">
+      <button id="registerSubmit" type="submit" class="btn btn-primary" value="Create">Create</button>
+    </div>
+  {% endform %}
+</div>
+
+<script defer src="{{ 'register.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Register",
+  "class": "section-register",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Register"
+    }
+  ]
+}
+{% endschema %}

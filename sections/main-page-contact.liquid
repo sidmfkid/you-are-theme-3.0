@@ -1,0 +1,38 @@
+<div class="page">
+  <div class="page__container">
+    {% form 'contact', class: 'page__contact-form', id: 'pageContact' %}
+      <div class="contact-field">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="contact[first_name]">
+      </div>
+      <div class="contact-field">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="contact[last_name]">
+      </div>
+      <div class="contact-field">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="contact[email]">
+      </div>
+      <div class="contact-field">
+        <label for="message">Message</label>
+        <textarea rows="4" id="message" name="contact[body]"></textarea>
+      </div>
+      <div class="contact-submit">
+        <button class="btn btn-primary" value="Create" type="submit">Submit</button>
+      </div>
+    {% endform %}
+  </div>
+
+  {% schema %}
+  {
+    "name": "page-contact",
+    "class": "section-page",
+    "settings": [],
+    "presets": [
+      {
+        "name": "page-contact"
+      }
+    ]
+  }
+  {% endschema %}
+</div>

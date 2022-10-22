@@ -1,0 +1,47 @@
+<predictive-search class="header__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+  <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+    <div class="field">
+      <input
+        class="header__search-input search__input field__input"
+        id="Search-In-Modal"
+        type="search"
+        name="q"
+        value=""
+        placeholder="{{ 'general.search.search' | t }}"
+        role="combobox"
+        aria-expanded="false"
+        aria-owns="predictive-search-results-list"
+        aria-controls="predictive-search-results-list"
+        aria-haspopup="listbox"
+        aria-autocomplete="list"
+        autocorrect="off"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="false"
+      >
+      {% comment %} <label class="field__label" for="Search-In-Modal">{{ 'general.search.search' | t }}</label> {% endcomment %}
+      <input type="hidden" name="options[prefix]" value="last">
+      <button id="searchInput" class="search__button field__button hide" aria-label="{{ 'general.search.search' | t }}">
+        {% render 'icon-search', className: 'icon-search' %}
+      </button>
+      {% render 'icon-search', className: 'icon-search-before' %}
+    </div>
+
+    <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+      <div class="predictive-search__loading-state">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          role="presentation"
+          class="spinner"
+          viewBox="0 0 66 66"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+        </svg>
+      </div>
+    </div>
+
+    <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+  </form>
+</predictive-search>

@@ -1,0 +1,229 @@
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+
+<input class="display-none" type="checkbox" name="menu" id="menu">
+
+<sticky-header class="header" id="header">
+  {% style %}
+      .header__cart-icon-container:after {
+        content: '';
+        {%- unless cart.item_count > 0 -%}
+      display: none;
+    {%- endunless -%}
+      }
+  {% endstyle %}
+  <header class="header__container" id="headerContainer">
+    <div class="header__logo">
+      {{
+        section.settings.logo
+        | image_url: width: 168
+        | image_tag: widths: '168', alt: section.settings.logo.alt, class: 'header__logo-image'
+      }}
+    </div>
+    <label for="menu" class="header__menu-button">
+      {% render 'icon-menu' %}
+      <div class="close"></div>
+      <div
+        id="cart-icon-bubble"
+        class="
+          cart-active {%- unless cart.item_count > 0 -%}
+            hidden
+          {%- endunless -%}
+        "
+      ></div>
+    </label>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        {% for link in section.settings.header_menu.links %}
+          <li class="header__nav-item">
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <details-modal class="header__search display-none">
+      <details>
+        <summary id="searchButton" class="header__search-icon-container" role="button">
+          {% comment %} <input type="text" name="search" id="searchInput" class="header__search-input closed"> {% endcomment %}
+          {% render 'icon-search', className: 'icon-search-before' %}
+        </summary>
+        <div class="search__modal modal-content">
+          <div class="search__modal-content">
+            {% render 'predictive-search' %}
+          </div>
+        </div>
+        <div class="modal-overlay"></div>
+      </details>
+    </details-modal>
+
+    <div class="header__account">
+      <div class="header__account-links">
+        {% unless customer %}
+          <div class="header__account-signup">
+            <a class="header__nav-item" href="{{ routes.account_register_url }}">Signup</a>
+          </div>
+          <div class="header__account-divider"></div>
+          <div class="header__account-login">
+            <a class="header__nav-item" href="{{ routes.account_login_url }}">Login</a>
+          </div>
+          <div class="header__account-login"></div>
+        {% else %}
+          <div class="header__account-logout">
+            <a
+              class="header__nav-item"
+              href="
+                {{ routes.account_logout_url
+                }}
+              "
+              >Logout</a
+            >
+          </div>
+          <div class="header__account-login"></div>
+        {% endunless %}
+      </div>
+      <a href="{{ routes.cart_url }}" class="header__cart-icon-container">
+        {% render 'icon-cart' %}
+      </a>
+    </div>
+  </header>
+</sticky-header>
+<div class="header__overlay"></div>
+<div class="cart-notification__container">
+  {%- render 'cart-notification' -%}
+</div>
+
+{% javascript %}
+  class StickyHeader extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.header = document.getElementById('shopify-section-header');
+      this.headerBounds = {};
+      this.currentScrollTop = 0;
+      this.preventReveal = false;
+      // this.predictiveSearch = this.querySelector('predictive-search');
+
+      this.onScrollHandler = this.onScroll.bind(this);
+      this.hideHeaderOnScrollUp = () => (this.preventReveal = true);
+
+      this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.addEventListener('scroll', this.onScrollHandler, false);
+
+      this.createObserver();
+    }
+
+    disconnectedCallback() {
+      this.removeEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.removeEventListener('scroll', this.onScrollHandler);
+    }
+
+    createObserver() {
+      let observer = new IntersectionObserver((entries, observer) => {
+        this.headerBounds = entries[0].intersectionRect;
+        observer.disconnect();
+      });
+
+      observer.observe(this.header);
+    }
+
+    onScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const checkbox = document.getElementById('menu');
+
+      if (checkbox.checked) return;
+      // if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
+
+      if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        if (this.preventHide) return;
+        requestAnimationFrame(this.hide.bind(this));
+      } else if (scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        if (!this.preventReveal) {
+          requestAnimationFrame(this.reveal.bind(this));
+        } else {
+          window.clearTimeout(this.isScrolling);
+
+          this.isScrolling = setTimeout(() => {
+            this.preventReveal = false;
+          }, 66);
+
+          requestAnimationFrame(this.hide.bind(this));
+        }
+      } else if (scrollTop <= this.headerBounds.top) {
+        requestAnimationFrame(this.reset.bind(this));
+      }
+
+      this.currentScrollTop = scrollTop;
+    }
+
+    hide() {
+      this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
+      // this.closeMenuDisclosure();
+      // this.closeSearchModal();
+    }
+
+    reveal() {
+      this.header.classList.add('shopify-section-header-sticky', 'animate');
+      this.header.classList.remove('shopify-section-header-hidden');
+    }
+
+    reset() {
+      this.header.classList.remove('shopify-section-header-hidden', 'shopify-section-header-sticky', 'animate');
+    }
+
+    // closeMenuDisclosure() {
+    //   this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
+    //   this.disclosures.forEach(disclosure => disclosure.close());
+    // }
+
+    // closeSearchModal() {
+    //   this.searchModal = this.searchModal || this.header.querySelector('details-modal');
+    //   this.searchModal.close(false);
+    // }
+  }
+
+  customElements.define('sticky-header', StickyHeader);
+{% endjavascript %}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    {% if section.settings.logo %}
+      "logo": {{ section.settings.logo | image_url: width: section.settings.logo.width | prepend: "https:" | json }},
+    {% endif %}
+    "sameAs": [
+      {{ settings.social_twitter_link | json }},
+      {{ settings.social_facebook_link | json }},
+      {{ settings.social_pinterest_link | json }},
+      {{ settings.social_instagram_link | json }},
+      {{ settings.social_tiktok_link | json }},
+      {{ settings.social_tumblr_link | json }},
+      {{ settings.social_snapchat_link | json }},
+      {{ settings.social_youtube_link | json }},
+      {{ settings.social_vimeo_link | json }}
+    ],
+    "url": {{ request.origin | append: page.url | json }}
+  }
+</script>
+{% schema %}
+{
+  "name": "Header",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "header_menu",
+      "label": "Navigation",
+      "info": "Navigation"
+    }
+  ]
+}
+{% endschema %}

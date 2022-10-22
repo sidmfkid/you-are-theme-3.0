@@ -1,0 +1,99 @@
+<style></style>
+
+{% assign headings = section.settings.heading | split: '|' %}
+
+{% assign heading_first = headings | first | strip %}
+{% assign heading_last = headings | last | strip %}
+
+<div data-animate class="hero">
+  <div class="hero__text-content">
+    <div class="hero__title">
+      {% if headings.size == 2 %}
+        <span class="hero__title-first">
+          {{ heading_first }}
+          {% render 'lines' %}
+          {% render 'dotted-lines' %}
+        </span>
+
+        <span class="hero__title-last"> {{ heading_last }} </span>
+      {% else %}
+        <span class="hero__title-first">{{ section.settings.heading }}</span>
+      {% endif %}
+    </div>
+    <div class="hero__content">
+      <div class="hero__description">
+        {{ section.settings.para }}
+      </div>
+      <div class="hero__button-container">
+        <a class="hero__button btn btn-primary" href="{{ section.settings.button_url }}">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__image-container">
+    {%- capture sizes -%}
+      (min-width: 1500px) calc((100vw - 60px) / 2), (min-width: 750px) calc((100vw - 20px) / 2)
+    {%- endcapture -%}
+    {{
+      section.settings.image
+      | image_url: width: 750
+      | image_tag: loading: 'lazy', sizes: sizes, widths: '165, 360, 535, 750, 1070, 1500'
+    }}
+    {% comment %}
+       <img
+        loading="lazy"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+        src="{{ section.settings.image | image_url }}"
+        alt="{{ section.settings.image.alt }}"
+      >
+    {% endcomment %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero",
+  "class": "section-hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Hero Heading",
+      "default": "Lets Get Started!",
+      "info": "Make it catchy!",
+      "placeholder": "Heading Text"
+    },
+    {
+      "type": "textarea",
+      "id": "para",
+      "label": "Hero Content",
+      "default": "Lorem Ispum",
+      "info": "Write a few sentences to capture your audience",
+      "placeholder": "Content Text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

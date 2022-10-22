@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "page-header": {
+      "type": "page-header",
+      "settings": {
+      }
+    },
+    "product": {
+      "type": "product",
+      "settings": {
+        "para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis mi netus vitae vestibulum amet ut amet. Et nunc maecenas pellentesque cras donec enim enim, diam rhoncus."
+      }
+    }
+  },
+  "order": [
+    "page-header",
+    "product"
+  ]
+}

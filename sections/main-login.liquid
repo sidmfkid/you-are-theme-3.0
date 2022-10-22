@@ -1,0 +1,46 @@
+<div class="login">
+  {% form 'customer_login', class: 'login__container', id: 'customerLogin' %}
+    <div class="login__field-container">
+      <label for="email" class="login__email-label">Email</label>
+      <input name="customer[email]" id="email" type="text" class="login__email-input">
+      {% render 'error-message', type: 'email-error' %}
+      {% render 'success-message', type: 'email-success' %}
+    </div>
+    <div class="login__field-container">
+      <label for="password" class="login__password-label">Password</label>
+      <input name="customer[password]" id="password" type="password" class="login__password-input">
+
+      {% render 'error-message', type: 'password-error', message: 'Password must be over 8 characters long' %}
+      {% render 'success-message', type: 'password-success' %}
+    </div>
+    <div class="login__submit">
+      <button id="loginSubmit" type="submit" class="btn btn-primary" value="Login">Login</button>
+    </div>
+  {% endform %}
+
+  {% form 'recover_customer_password', class: 'login__container', id: 'customerReset' %}
+    {{ form.errors | default_errors }}
+    <div class="login__field-container">
+      <label for="email">Forgot Your Password?</label>
+      <input type="email" name="email">
+    </div>
+    <div class="login__submit">
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+  {% endform %}
+</div>
+
+<script defer src="{{ 'login.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Login",
+  "class": "section-login",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Login"
+    }
+  ]
+}
+{% endschema %}

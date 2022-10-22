@@ -1,0 +1,287 @@
+{% if section.settings.order == 'reverse' and section.settings.stretch == 'true' %}
+  {% assign text_content = 'left' %}
+  {% assign image_content = 'right-stretch' %}
+{% elsif section.settings.order == 'regular' and section.settings.stretch == 'true' %}
+  {% assign text_content = 'right' %}
+  {% assign image_content = 'left-stretch' %}
+{% elsif section.settings.order == 'reverse' and section.settings.stretch == 'false' %}
+  {% assign text_content = 'left' %}
+  {% assign image_content = 'right' %}
+{% elsif section.settings.order == 'regular' and section.settings.stretch == 'false' %}
+  {% assign text_content = 'right' %}
+  {% assign image_content = 'left' %}
+{% endif %}
+
+{%- capture section_css -%}
+  .image-with-text-2__image-container::after{ background: {{ section.settings.image_bg }}; } .image-with-text-2__title
+  h2{ color: {{ section.settings.heading_color }}; } .image-with-text-2__para{ color: {{ section.settings.para_color }};
+  }
+{%- endcapture -%}
+
+{% style %}
+      {% if section.settings.order == 'regular' and section.settings.stretch == 'true' %}
+          #shopify-section-{{ section.id }} .image-with-text-2__image-container {
+              border-radius: 0 10rem 10rem 0;
+
+          }
+          @media screen and (max-width: 600px) {
+        #shopify-section-{{ section.id }} .image-with-text-2__image-container {
+        margin-right: 1.6rem;
+        border-radius: 0 10rem 10rem 0;
+      }
+    }
+      {% elsif section.settings.order == 'reverse' and section.settings.stretch == 'true' %}
+      #shopify-section-{{ section.id }} .image-with-text-2__image-container {
+        border-radius:  10rem 0 0 10rem;
+
+      }
+      @media screen and (max-width: 600px) {
+
+      #shopify-section-{{ section.id }} .image-with-text-2__image-container {
+        margin-left: 1.6rem;
+        border-radius:  10rem 0 0 10rem;
+      }
+      #shopify-section-{{ section.id }} .image-with-text-2__text-content {
+      }
+      }
+      {% elsif section.settings.order == 'reverse' and section.settings.stretch == 'false' %}
+      #shopify-section-{{ section.id }} .image-with-text-2__image-container {
+          border-radius: 10rem;
+      }
+  {% elsif section.settings.order == 'regular' and section.settings.stretch == 'false' %}
+      #shopify-section-{{ section.id }} .image-with-text-2__image-container {
+          border-radius: 10rem;
+      }
+
+      {% endif %}
+          {% render 'css-loop',
+        css: section_css,
+        id: section.id %}
+{% endstyle %}
+
+<div data-animate class="image-with-text-2">
+  <div class="image-with-text-2__text-content {{ text_content }}">
+    <div class="image-with-text-2__title">
+      <h2
+        data-animate-delay="0"
+        data-animate-text="{{ section.settings.animate_title }}"
+      >
+        {{ section.settings.heading }}
+      </h2>
+    </div>
+    <div class="image-with-text-2__para">
+      {{ section.settings.para }}
+    </div>
+    <div class="image-with-text-2__button-container">
+      <a
+        href="{{ section.settings.button_url }}"
+        class="image-with-text-2__button btn btn-{{ section.settings.button_color }}"
+      >
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+  </div>
+  <div
+    class="image-with-text-2__image-container {{ image_content }} {{ section.settings.row-order }}"
+    data-animate-delay="0"
+    data-animate-img="{{ section.settings.animate_img }}"
+  >
+    {%- capture sizes -%}
+      (min-width: 1500px) calc((100vw - 20px) / 2) (min-width: 750px) calc((100vw - 20px) / 2)
+    {%- endcapture -%}
+    {{
+      section.settings.image
+      | image_url: width: 1000
+      | image_tag:
+        loading: 'lazy',
+        sizes: sizes,
+        widths: '150, 360, 535, 750, 1070, 1500',
+        class: 'image-with-text-2__image'
+    }}
+    {% comment %} <img src="{{ section.settings.image | image_url }}" alt="" class="image-with-text-2__image"> {% endcomment %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image With Text 2",
+  "class": "section-image-with-text-2",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Lets Get Started!",
+      "info": "Make it catchy!",
+      "placeholder": "Heading Text"
+    },
+    {
+      "type": "textarea",
+      "id": "para",
+      "label": "Content",
+      "default": "Lorem Ispum",
+      "info": "Write a few sentences to capture your audience",
+      "placeholder": "Content Text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "color",
+      "id": "image_bg",
+      "label": "Image Background Color",
+      "default": "#e6ad59"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#976A11"
+    },
+    {
+      "type": "color",
+      "id": "para_color",
+      "label": "Content Color",
+      "default": "#976A11"
+    },
+    {
+      "type": "select",
+      "id": "animate_title",
+      "label": "Text Animation",
+      "options": [
+        {
+          "value": "fadeRight",
+          "label": "Fade Right"
+        },
+        {
+          "value": "fadeLeft",
+          "label": "Fade Left"
+        },
+        {
+          "value": "fadeUp",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fadeDown",
+          "label": "Fade Down"
+        }
+      ],
+      "default": "fadeLeft"
+    },
+    {
+      "type": "select",
+      "id": "animate_img",
+      "label": "Image Animation",
+      "options": [
+        {
+          "value": "fadeRight",
+          "label": "Fade Right"
+        },
+        {
+          "value": "fadeLeft",
+          "label": "Fade Left"
+        },
+        {
+          "value": "fadeUp",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fadeDown",
+          "label": "Fade Down"
+        }
+      ],
+      "default": "fadeRight"
+    },
+    {
+      "type": "select",
+      "id": "order",
+      "label": "Content Order",
+      "options": [
+        {
+          "value": "regular",
+          "label": "Image Left"
+        },
+        {
+          "value": "reverse",
+          "label": "Image Right"
+        }
+      ],
+      "default": "regular"
+    },
+    {
+      "type": "select",
+      "id": "row-order",
+      "label": "Mobile Order",
+      "options": [
+        {
+          "value": "row-1",
+          "label": "Image First"
+        },
+        {
+          "value": "row-2",
+          "label": "Image Last"
+        }
+      ],
+      "default": "row-1"
+    },
+    {
+      "type": "select",
+      "id": "stretch",
+      "label": "Stretch",
+      "options": [
+        {
+          "value": "true",
+          "label": "Stretch"
+        },
+        {
+          "value": "false",
+          "label": "Contain"
+        }
+      ],
+      "default": "true"
+    },
+    {
+      "type": "select",
+      "id": "button_color",
+      "label": "Button Color",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "primary",
+      "info": "Choose a Style"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image With Text 2"
+    },
+    {
+      "name": "Image With Text Contained",
+      "settings": {
+        "stretch": "false",
+        "para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor luctus tortor sagittis dis. Venenatis purus eu pulvinar ac."
+      }
+    }
+  ]
+}
+{% endschema %}

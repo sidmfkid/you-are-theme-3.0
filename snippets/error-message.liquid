@@ -1,0 +1,10 @@
+<div id="{{ type }}" class="error-message">
+  <span class="material-symbols-outlined"> error </span>
+  <span class="error-message__message">
+    {% if message != blank %}
+      {{ message }}
+    {% else %}
+      Please put in a valid email address
+    {% endif -%}
+  </span>
+</div>

@@ -1,0 +1,43 @@
+details[open] .search__modal {
+    // display: block;
+    opacity: 1;
+    height: 9.6rem;
+}
+
+.search__modal {
+    &.modal-content {
+        @include section-grid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        background: $dark-yellow-100;
+        z-index: 4;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+    }
+    &-content {
+        @include section-container;
+        height: 9.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2.4rem;
+        gap: 2.4rem;
+        .field {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            form {
+                height: min-content;
+            }
+            &__button {
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
+}

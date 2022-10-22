@@ -1,0 +1,64 @@
+<div class="order">
+  <div class="order__details">
+    <table>
+      <thead>
+        <tr>
+          <th align="left" colspan="1">Products</th>
+          <th align="right" colspan="1">Price</th>
+          <th align="right" colspan="1">Quantity</th>
+          <th align="right" colspan="1">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in order.line_items %}
+          <tr>
+            <td>{{ item.title }}</td>
+            <td align="right">{{ item.original_price | money }}</td>
+            <td align="right">{{ item.quantity }}</td>
+            <td align="right">{{ item.original_line_price | money }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <th align="left" scope="row">Subtotal</th>
+          <td align="right">{{ order.subtotal_price | money }}</td>
+        </tr>
+        <tr>
+          <th align="left" scope="row">Shipping</th>
+          <td align="right">{{ order.shipping_price | money }}</td>
+        </tr>
+        <tr>
+          <th align="left" scope="row">Total</th>
+          <td align="right">{{ order.total_price | money }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div class="order__addresses row-2">
+    <dl class="order__billing-address">
+      <dd>Billing Address</dd>
+      <dt>Payment Status: {{ order.financial_status_label }}</dt>
+
+      <span>{{ order.billing_address | format_address }}</span>
+    </dl>
+    <dl class="order__shipping-address">
+      <dd>Shipping Address</dd>
+      <dt>Shipping Status: {{ order.fulfillment_status_label }}</dt>
+      <dt>{{ order.shipping_address | format_address }}</dt>
+    </dl>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Order",
+  "class": "section-order",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Order"
+    }
+  ]
+}
+{% endschema %}

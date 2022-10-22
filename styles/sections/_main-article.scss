@@ -1,0 +1,23 @@
+.section-article {
+    @include section-margin;
+}
+
+.article {
+    @include section-grid;
+    &__container {
+        @include section-container;
+    }
+    &__author {
+        border-bottom: 2px solid $dark-yellow-500;
+        // width: fit-content;
+    }
+    &__content {
+        h3,
+        h2,
+        h1,
+        h4,
+        h5 {
+            color: $dark-yellow-800;
+        }
+    }
+}

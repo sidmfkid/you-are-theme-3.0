@@ -1,0 +1,288 @@
+.register {
+    @include section-grid;
+
+    &__container {
+        @include section-container;
+    }
+    &__field-container {
+        margin: 0 auto 2.4rem auto;
+        // margin-bottom: 2.4rem;
+        width: min-content;
+        label {
+            @include button;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+        input {
+            min-width: calc(30rem + 10vw);
+            padding: 1rem;
+            font-size: 1.6rem;
+        }
+    }
+    &__submit {
+        margin: 0 auto;
+        width: min-content;
+    }
+    @include media-small {
+        &__field-container {
+            width: auto;
+            input {
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+.login {
+    @include section-grid;
+
+    &__container {
+        @include section-container;
+    }
+    &__field-container {
+        margin: 0 auto 2.4rem auto;
+        // margin-bottom: 2.4rem;
+        width: min-content;
+        label {
+            @include button;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+        input {
+            min-width: calc(30rem + 10vw);
+            padding: 1rem;
+            font-size: 1.6rem;
+        }
+    }
+    &__submit {
+        margin: 0 auto;
+        width: min-content;
+    }
+    @include media-small {
+        &__field-container {
+            width: auto;
+            input {
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+.reset {
+    @include section-grid;
+
+    &__container {
+        @include section-container;
+    }
+    &__field-container {
+        margin: 0 auto 2.4rem auto;
+        // margin-bottom: 2.4rem;
+        width: min-content;
+        label {
+            @include button;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+        input {
+            min-width: calc(30rem + 10vw);
+            padding: 1rem;
+            font-size: 1.6rem;
+        }
+    }
+    &__submit {
+        margin: 0 auto;
+        width: min-content;
+    }
+    @include media-small {
+        &__field-container {
+            width: auto;
+            input {
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+.account {
+    @include section-grid;
+
+    &__container {
+        @include section-container;
+        gap: 2.4rem;
+        display: flex;
+        align-items: flex-start;
+    }
+    &__orders {
+        width: calc(50% - 2.4rem);
+    }
+
+    &__info {
+        width: calc(50% - 2.4rem);
+
+        // display: inline-block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__info {
+        & > div {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            color: $dark-yellow-800;
+            width: 50%;
+        }
+    }
+    &__orders-list {
+        width: 100%;
+    }
+    &__order {
+        & > div {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            color: $dark-yellow-800;
+            width: 50%;
+        }
+        margin-bottom: 1.6rem;
+        width: 100% !important;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &-date {
+            width: 100% !important;
+        }
+        &-number {
+            color: $dark-yellow-600 !important;
+            font-size: 2.4rem !important;
+            line-height: 3.2rem !important;
+            font-family: var(--font-heading-family);
+            border-bottom: 1px solid $dark-yellow-600;
+            width: 100% !important;
+        }
+    }
+
+    &__title {
+        border-bottom: 3px solid $dark-yellow-800;
+        width: 100%;
+        margin-bottom: 1.6rem;
+    }
+    @include media-tablet {
+        &__container {
+            flex-wrap: wrap;
+        }
+        &__orders {
+            width: 100%;
+        }
+
+        &__info {
+            width: 100%;
+        }
+    }
+    @include media-medium {
+        &__info {
+            width: 100%;
+            & > div {
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                color: $dark-yellow-800;
+                width: 100%;
+            }
+        }
+        &__order {
+            & > div {
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                color: $dark-yellow-800;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.order {
+    @include section-grid;
+
+    &__details {
+        grid-column: 2 / 11;
+        table {
+            width: 100%;
+            // border: 1px solid $dark-yellow-800;
+            // padding: 0.8rem;
+            border: 1px solid $dark-yellow-800 !important;
+        }
+        td {
+            // border: 1px solid $dark-yellow-800 !important;
+        }
+    }
+    &__addresses {
+        grid-column: 11 / 14;
+        span {
+            display: block;
+        }
+        dd {
+            font-weight: bold;
+        }
+    }
+    @include media-tablet {
+        &__details {
+            grid-column: 2 / 6;
+        }
+        &__addresses {
+            grid-column: 6 / 8;
+        }
+    }
+    @include media-tablet {
+        &__details {
+            grid-column: 2 / 6;
+        }
+        &__addresses {
+            grid-column: 6 / 8;
+        }
+    }
+    @include media-small {
+        &__details {
+            grid-column: 1 / 7;
+            margin: 0 1.6rem;
+        }
+        &__addresses {
+            grid-column: 1 / 7;
+            margin: 0 1.6rem;
+        }
+    }
+}
+
+.activate {
+    @include section-grid;
+
+    &__container {
+        @include section-container;
+    }
+    &__field-container {
+        margin: 0 auto 2.4rem auto;
+        // margin-bottom: 2.4rem;
+        width: min-content;
+        label {
+            @include button;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+        input {
+            min-width: calc(30rem + 10vw);
+            padding: 1rem;
+            font-size: 1.6rem;
+        }
+    }
+    &__submit {
+        margin: 0 auto;
+        display: flex;
+        gap: 2.4rem;
+        width: min-content;
+    }
+    @include media-small {
+        &__field-container {
+            width: auto;
+            input {
+                min-width: 100%;
+            }
+        }
+    }
+}

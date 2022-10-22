@@ -1,0 +1,159 @@
+{
+  "sections": {
+    "2895d287-d5a6-4a88-b2c4-ef0d1e7e949c": {
+      "type": "main-hero",
+      "settings": {
+        "heading": "Representation | Matters",
+        "para": "Where everytime we make sale, a box is donated to a child in a low income area.",
+        "button_text": "Shop Now",
+        "button_url": "shopify:\/\/products\/you-are-10-piece-crayons",
+        "image": "shopify:\/\/shop_images\/box_Square.jpg"
+      }
+    },
+    "80e0a61d-c4e0-480c-b8c0-28d2f7870c39": {
+      "type": "main-image-with-text",
+      "settings": {
+        "heading": "Lets Get Started!",
+        "para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor luctus tortor sagittis dis. Venenatis purus eu pulvinar ac.",
+        "button_text": "Shop Now",
+        "button_url": "shopify:\/\/products\/you-are-10-piece-crayons",
+        "image": "shopify:\/\/shop_images\/green-crayon-desktop.png",
+        "image_bg": "#64bf59",
+        "heading_color": "#257913",
+        "para_color": "#257913",
+        "order": "regular",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "button_color": "secondary"
+      }
+    },
+    "9585f8c6-1402-45a8-9eda-2bb98b25fd95": {
+      "type": "main-image-with-text",
+      "settings": {
+        "heading": "Lets Get Started!",
+        "para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor luctus tortor sagittis dis. Venenatis purus eu pulvinar ac.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor luctus tortor sagittis dis. Venenatis purus eu pulvinar ac.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor luctus tortor sagittis dis. Venenatis purus eu pulvinar ac.",
+        "button_text": "Shop Now",
+        "button_url": "shopify:\/\/products\/you-are-10-piece-crayons",
+        "image": "shopify:\/\/shop_images\/orange-crayon-desktop.png",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976a11",
+        "para_color": "#976a11",
+        "order": "reverse",
+        "animate_title": "fadeRight",
+        "animate_img": "fadeUp",
+        "button_color": "primary"
+      }
+    },
+    "137601e7-4230-41dd-8467-e9816e4d52fd": {
+      "type": "main-callout",
+      "settings": {
+        "heading": "Making A Difference  Through Positive Representation",
+        "image": "shopify:\/\/shop_images\/3D_Crayon.png",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight"
+      }
+    },
+    "696ff8e6-1e49-49ac-b2b7-cf385b531234": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Lets Get Started!",
+        "para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor luctus tortor sagittis dis. Venenatis purus eu pulvinar ac.",
+        "button_text": "Shop Now",
+        "button_url": "shopify:\/\/products\/you-are-10-piece-crayons",
+        "image": "shopify:\/\/shop_images\/collage.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976a11",
+        "para_color": "#976a11",
+        "animate_title": "fadeRight",
+        "animate_img": "fadeLeft",
+        "order": "regular",
+        "row-order": "row-1",
+        "stretch": "true",
+        "button_color": "primary"
+      }
+    },
+    "0af77f64-006d-41d1-b569-4e1bff53f731": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Lets Get Started!",
+        "para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor luctus tortor sagittis dis. Venenatis purus eu pulvinar ac.",
+        "button_text": "Shop Now",
+        "button_url": "shopify:\/\/products\/you-are-10-piece-crayons",
+        "image": "shopify:\/\/shop_images\/collage.jpg",
+        "image_bg": "#976a11",
+        "heading_color": "#976a11",
+        "para_color": "#976a11",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "order": "reverse",
+        "row-order": "row-1",
+        "stretch": "true",
+        "button_color": "primary"
+      }
+    },
+    "93e8a056-240a-4156-afc3-30f8186c6c24": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Lets Get Started!",
+        "para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor luctus tortor sagittis dis. Venenatis purus eu pulvinar ac.",
+        "button_text": "Shop Now",
+        "button_url": "shopify:\/\/products\/you-are-10-piece-crayons",
+        "image": "shopify:\/\/shop_images\/collage.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976a11",
+        "para_color": "#976a11",
+        "animate_title": "fadeRight",
+        "animate_img": "fadeLeft",
+        "order": "regular",
+        "row-order": "row-1",
+        "stretch": "false",
+        "button_color": "primary"
+      }
+    },
+    "d16d6038-f52a-4507-ad46-167d3ce84afb": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Lets Get Started!",
+        "para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor luctus tortor sagittis dis. Venenatis purus eu pulvinar ac.",
+        "button_text": "Shop Now",
+        "button_url": "shopify:\/\/products\/you-are-10-piece-crayons",
+        "image": "shopify:\/\/shop_images\/collage.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976a11",
+        "para_color": "#976a11",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "order": "reverse",
+        "row-order": "row-1",
+        "stretch": "false",
+        "button_color": "primary"
+      }
+    },
+    "800b9f4b-821b-4627-972c-db63fd3c4b70": {
+      "type": "main-cta",
+      "settings": {
+        "heading_1": "Affirmations On Each Crayon",
+        "heading_2": "Let Them Know They Are Special",
+        "button_text": "Shop Now",
+        "button_url": "shopify:\/\/products\/you-are-10-piece-crayons",
+        "image": "shopify:\/\/shop_images\/CrayonBoxTransparent2_png.png",
+        "button_color": "secondary",
+        "text_color": "#1a550d",
+        "circle_color": "#e6ad59",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeUp"
+      }
+    }
+  },
+  "order": [
+    "2895d287-d5a6-4a88-b2c4-ef0d1e7e949c",
+    "80e0a61d-c4e0-480c-b8c0-28d2f7870c39",
+    "9585f8c6-1402-45a8-9eda-2bb98b25fd95",
+    "137601e7-4230-41dd-8467-e9816e4d52fd",
+    "696ff8e6-1e49-49ac-b2b7-cf385b531234",
+    "0af77f64-006d-41d1-b569-4e1bff53f731",
+    "93e8a056-240a-4156-afc3-30f8186c6c24",
+    "d16d6038-f52a-4507-ad46-167d3ce84afb",
+    "800b9f4b-821b-4627-972c-db63fd3c4b70"
+  ]
+}

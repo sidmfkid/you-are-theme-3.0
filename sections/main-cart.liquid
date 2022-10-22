@@ -1,0 +1,108 @@
+<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+
+<section class="cart">
+  <cart-items id="cart-items" class="cart__container" data-id="{{ section.id }}">
+    {%- if cart != empty -%}
+      <form
+        action="{{ routes.cart_url }}"
+        method="post"
+        id="cart"
+        class="cart__items-wrapper"
+      >
+        {%- for item in cart.items -%}
+          <div id="CartItem-{{ item.index | plus: 1 }}" class="cart__item">
+            <div class="cart__item-image-container">
+              <img src="{{ item.image | image_url }}" alt="" class="cart__item-image">
+            </div>
+            <div class="cart__item-details-container">
+              <div class="cart__item-details">
+                <div class="cart__item-details-title">{{ item.title }}</div>
+                {% comment %} <div class="cart__item-details-variant">{{ item.variant.title }}</div> {% endcomment %}
+                <div class="cart__item-details-quantity">Quantity: {{ item.quantity }}</div>
+                <div class="cart__item-details-price">Price: {{ item.original_line_price | money }}</div>
+              </div>
+              <div class="cart__item-actions">
+                <button class="cart__item-actions-button btn btn-primary edit hidden">Edit</button>
+                <cart-remove-button
+                  id="Remove-{{ item.index | plus: 1 }}"
+                  data-index="{{ item.index | plus: 1 }}"
+                  data-productID="{{ item.id }}"
+                  class="cart__item-actions-button btn btn-primary remove"
+                >
+                  Remove
+                </cart-remove-button>
+                <quantity-input class="cart__quantity">
+                  <div class="cart__quantity-input-container">
+                    <button name="minus" class="cart__quantity-button">
+                      <span class="material-symbols-outlined"> remove </span>
+                    </button>
+                    <input
+                      min="0"
+                      class="cart__quantity-input"
+                      value="{{ item.quantity }}"
+                      type="number"
+                      name="updates[]"
+                      id="quantity-{{ item.index | plus: 1 }}"
+                      data-index="{{ item.index | plus: 1 }}"
+                    >
+
+                    <button name="plus" class="cart__quantity-button">
+                      <span class="material-symbols-outlined"> add </span>
+                    </button>
+                  </div>
+                </quantity-input>
+                <button class="cart__item-actions-button btn btn-primary hidden">Save Edit</button>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </form>
+
+      <div class="cart__summary">
+        <div class="cart__summary-total">
+          <span>Total: </span>
+          <span>{{ cart.total_price | money }}</span>
+          <div class="loading-overlay hidden">
+            <div class="loading-overlay__spinner">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                role="presentation"
+                class="spinner"
+                viewBox="0 0 66 66"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="cart__summary-actions">
+          <a href="/" class="btn btn-primary">Keep Shopping</a>
+          <button form="cart" type="submit" id="checkout" name="checkout" class="btn btn-secondary">Checkout</button>
+          {%- if additional_checkout_buttons -%}
+            {{ content_for_additional_checkout_buttons }}
+          {%- endif -%}
+        </div>
+      </div>
+    {% else %}
+      <div class="cart__empty">
+        <h2 class="title">No Items In Your Cart</h2>
+        <a href="/" class="btn btn-primary">Home</a>
+      </div>
+    {%- endif -%}
+  </cart-items>
+</section>
+
+{% schema %}
+{
+  "name": "Main Cart",
+  "class": "section-cart",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Main Cart"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,168 @@
+.section-cart {
+    @include section-margin;
+}
+.cart {
+    @include section-grid;
+    //***************** CART Quantity *************** //
+    &__quantity {
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+        &-input-container {
+            border: 3px solid $brown-800;
+            padding: 0.8rem 0.8rem;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+        &-button {
+            cursor: pointer;
+            height: auto;
+        }
+        &-input {
+            -moz-appearance: textfield;
+            max-width: 4rem;
+            height: auto;
+            @include button;
+            border: none;
+            text-align: center;
+            background-color: transparent;
+        }
+    }
+
+    //***************** End Cart Quantity *************** //
+    &__empty {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.4rem;
+        a {
+            display: block;
+            cursor: pointer;
+        }
+    }
+    &__container {
+        @include section-container;
+    }
+    &__items {
+        &-wrapper {
+            border-bottom: 3px $dark-yellow-800 solid;
+        }
+    }
+    &__item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 2.4rem;
+        &-image-container {
+            max-width: 30rem;
+        }
+        &-image {
+            width: 100%;
+            height: auto;
+        }
+        &-details {
+            display: flex;
+            gap: 2.4rem;
+            margin-bottom: 2.4rem;
+            &-container {
+                margin: auto 0;
+                // display: flex;
+                // flex-wrap: wrap;
+                // gap: 2.4rem;
+                // justify-content: flex-end;
+                // align-items: center;
+            }
+        }
+        &-actions {
+            display: flex;
+            justify-content: end;
+            gap: 2.4rem;
+            align-items: center;
+        }
+    }
+
+    &__summary {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        flex-wrap: wrap;
+        &-actions {
+            width: 100%;
+            display: flex;
+            // justify-content: end;
+            gap: 2.4rem;
+            .dynamic-checkout__content {
+                display: flex;
+                width: fit-content;
+                & div {
+                    width: fit-content;
+                    & [role="list"] {
+                        justify-content: space-evenly;
+                    }
+                }
+            }
+        }
+    }
+    @include media-medium {
+        &__item {
+            &-image-container {
+                max-width: 20rem;
+                flex-grow: 1;
+            }
+            &-details {
+                &-container {
+                    flex-grow: 1;
+                }
+            }
+        }
+        &__summary {
+            &-actions {
+                display: flex;
+                justify-content: center;
+                gap: 2.4rem;
+                align-items: center;
+
+                flex-direction: column;
+                & > * {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    @include media-small {
+        &__item {
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2.4rem;
+            &-image-container {
+                max-width: 100%;
+                flex-grow: 1;
+            }
+            &-actions {
+                display: flex;
+                justify-content: end;
+                gap: 2.4rem;
+                align-items: center;
+                width: fit-content;
+                margin: 0 auto;
+                gap: 2.4rem;
+            }
+            &-details {
+                display: block;
+
+                &-title,
+                &-quantity,
+                &-price {
+                    margin: 0 auto;
+                }
+                &-container {
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+}

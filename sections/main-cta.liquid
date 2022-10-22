@@ -1,0 +1,165 @@
+{%- capture section_css -%}
+  .cta__title h2 { color: {{ section.settings.text_color }}; } .cta__circle { background:
+  {{ section.settings.circle_color }}; }
+{%- endcapture -%}
+
+{% style %}
+  {% render 'css-loop', css: section_css, id: section.id %}
+{% endstyle %}
+
+<div data-animate id="cta" class="cta">
+  <div class="cta__title left-cta">
+    <h2 class="title-alt">
+      {{ section.settings.heading_1 }}
+    </h2>
+  </div>
+  <div class="cta__content center-cta">
+    <div class="cta__circle"></div>
+
+    <img
+      data-animate-img="{{ section.settings.animate_img }}"
+      data-animate-delay="1"
+      loading="lazy"
+      src="{{ section.settings.image | image_url }}"
+      alt=""
+      class="cta__image"
+    >
+  </div>
+  <div class="cta__title right-cta">
+    <h2 class="title-alt">
+      {{ section.settings.heading_2 }}
+    </h2>
+  </div>
+
+  <div class="cta__button-container button-cta">
+    <a
+      href="{{ section.settings.button_url }}"
+      class="cta__button btn btn-{{ section.settings.button_color }}"
+    >
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CTA",
+  "class": "section-cta",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading",
+      "default": "Lets Get Started!",
+      "info": "Make it catchy!",
+      "placeholder": "Heading Text"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Heading",
+      "default": "Lets Get Started!",
+      "info": "Make it catchy!",
+      "placeholder": "Heading Text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "button_color",
+      "label": "Button Color",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "secondary",
+      "info": "Choose a Style"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#1A550D"
+    },
+    {
+      "type": "color",
+      "id": "circle_color",
+      "label": "Circle Color",
+      "default": "#e6ad59"
+    },
+    {
+      "type": "select",
+      "id": "animate_title",
+      "label": "Text Animation",
+      "options": [
+        {
+          "value": "fadeRight",
+          "label": "Fade Right"
+        },
+        {
+          "value": "fadeLeft",
+          "label": "Fade Left"
+        },
+        {
+          "value": "fadeUp",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fadeDown",
+          "label": "Fade Down"
+        }
+      ],
+      "default": "fadeLeft"
+    },
+    {
+      "type": "select",
+      "id": "animate_img",
+      "label": "Image Animation",
+      "options": [
+        {
+          "value": "fadeRight",
+          "label": "Fade Right"
+        },
+        {
+          "value": "fadeLeft",
+          "label": "Fade Left"
+        },
+        {
+          "value": "fadeUp",
+          "label": "Fade Up"
+        },
+        {
+          "value": "fadeDown",
+          "label": "Fade Down"
+        }
+      ],
+      "default": "fadeUp"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA"
+    }
+  ]
+}
+{% endschema %}

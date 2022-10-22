@@ -1,0 +1,51 @@
+.section-page {
+    @include section-margin;
+}
+
+.page {
+    @include section-grid;
+    &__container {
+        @include section-container;
+    }
+    &__contact-form {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.4rem;
+    }
+    .contact-field {
+        display: flex;
+        flex-direction: column;
+        min-width: calc(50% + -2.4rem);
+
+        input[type="text"] {
+            padding: 1rem;
+            font-size: 1.6rem;
+        }
+        &:nth-of-type(4) {
+            width: 100%;
+        }
+        label {
+            @include button;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+    }
+    .contact-submit {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+    }
+    @include media-medium {
+        .contact-field {
+            width: 100%;
+        }
+        .contact-submit {
+            width: 100%;
+
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+}

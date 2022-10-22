@@ -1,0 +1,32 @@
+.btn {
+    font-size: font-size(regularLarge);
+    font-family: var(--font-body-family);
+    line-height: 2.4rem;
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+    &-primary {
+        background-color: $dark-yellow-500;
+        padding: 0.8rem 3.2rem;
+        &:link:active,
+        &:link:hover,
+        &:hover,
+        &:active {
+            background-color: $dark-yellow-600;
+        }
+        &:disabled {
+            background-color: grey;
+        }
+    }
+    &-secondary {
+        background-color: $green-500;
+        padding: 0.8rem 3.2rem;
+        &:link:active,
+        &:link:hover,
+        &:hover,
+        &:active {
+            background-color: $green-600;
+        }
+    }
+}

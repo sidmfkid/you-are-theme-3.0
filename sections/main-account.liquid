@@ -1,0 +1,94 @@
+<div class="account">
+  <div class="account__container">
+    <div class="account__info">
+      <h2 class="account__title title">Account Info</h2>
+
+      <div class="account__name">
+        <span>
+          Name:
+          {{ customer.first_name }}
+          {{ customer.last_name }}
+        </span>
+      </div>
+      <div class="account__email">
+        <span>
+          Email:
+          {{ customer.email }}
+        </span>
+      </div>
+
+      <div class="account__addresses">
+        {% if customer.addresses.size > 0 %}
+          <ul>
+            <span>Addresses:</span>
+            {% paginate customer.addresses by 5 %}
+              {% for item in customer.addresses %}
+                <li>
+                  {{ item | format_address }}
+                </li>
+              {% endfor %}
+            {% endpaginate %}
+          </ul>
+        {% else %}
+          Addresses: None
+        {% endif %}
+      </div>
+
+      {% if customer.company_available_locations.size > 0 %}
+        <div class="account__company">
+          <span>Company: {{ customer.current_company }}</span>
+        </div>
+        <div class="account__company-addresses">
+          <ul>
+            <span>Company Addresses: </span>
+            {% paginate customer.company_available_locations by 5 %}
+              {% for item in customer.company_available_locations %}
+                <li>
+                  {{ item | format_address }}
+                </li>
+              {% endfor %}
+            {% endpaginate %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+    <div class="account__orders">
+      <h2 class="account__title title">Orders</h2>
+      <div class="account__orders-list">
+        {% if customer.orders %}
+          {% paginate customer.orders by 20 %}
+            {% for order in customer.orders %}
+              <div class="account__order">
+                <a href="{{ order.customer_url }}" class="account__order-number">Order# {{ order.order_number }}</a>
+
+                <div class="account__order-date">Date: {{ order.created_at | date: '%B %d, %Y' }}</div>
+                <div class="account__order-fufillment">
+                  Shipping Status: {{ order.fulfillment_status_label | capitalize }}
+                </div>
+                <div class="account__order-payment-status">
+                  Payment Status: {{ order.financial_status_label | capitalize }}
+                </div>
+                <div class="account__order-total-items">Total Items: {{ order.line_items.size }}</div>
+
+                {% comment %} <div class="account__order-fuffilment">Order# {{ order.order_number }}</div> {% endcomment %}
+              </div>
+            {% endfor %}
+          {% endpaginate %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Account",
+  "class": "section-account",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Account"
+    }
+  ]
+}
+{% endschema %}

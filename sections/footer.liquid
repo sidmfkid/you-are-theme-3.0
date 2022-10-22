@@ -1,0 +1,94 @@
+{% assign linkNum = section.settings.footer_menu.links.size | divided_by: 2 | round %}
+
+<div id="footer" class="footer">
+  <div class="footer__container">
+    <div class="footer__logo-container">
+      <img loading="lazy" src="{{ section.settings.logo | image_url }}" alt="" class="footer__logo">
+    </div>
+    <div class="footer__link-container-center">
+      <ul class="footer__link-list">
+        {% for link in section.settings.footer_menu.links %}
+          {% if forloop.index <= 4 %}
+            <li>
+              <a href="{{ link.url }}" class="footer__link">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="footer__link-container">
+      <ul class="footer__link-list">
+        {% for link in section.settings.footer_menu.links %}
+          {% if forloop.index > 4 %}
+            <li>
+              <a href="{{ link.url }}" class="footer__link">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% if settings.social_facebook_link != blank %}
+          <li>
+            <a class="social-link" href="{{ settings.social_facebook_link }}">
+              <span class="social-icon">
+                {% render 'icon-facebook' %}
+              </span>
+              <span class="social-text">Facebook</span></a
+            >
+          </li>
+        {% endif %}
+        {% if settings.social_instagram_link != blank %}
+          <li>
+            <a class="social-link" href="{{ settings.social_instagram_link }}">
+              <span class="social-icon">
+                {% render 'icon-instagram' %}
+              </span>
+              <span class="social-text">Instagram</span></a
+            >
+          </li>
+        {% endif %}
+        {% if settings.social_tiktok_link != blank %}
+          <li>
+            <a class="social-link" href="{{ settings.social_tiktok_link }}">
+              <span class="social-icon">
+                {% render 'icon-tiktok' %}
+              </span>
+              <span class="social-text">Tiktok</span></a
+            >
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  <div class="footer__payment-options row-2-desk">
+    {% for type in shop.enabled_payment_types -%}
+      {{ type | payment_type_svg_tag }}
+    {% endfor %}
+  </div>
+  <div class="footer__copywrite row-3-desk">
+    <small>Copywrite 2022 {{ shop.name | upcase }} LLC &copy</small>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "section-footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Navigation",
+      "info": "Navigation"
+    }
+  ]
+}
+{% endschema %}

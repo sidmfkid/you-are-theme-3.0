@@ -1,0 +1,31 @@
+<section class="article">
+  <div class="article__container">
+    <div class="article__title-container">
+      <h2 class="article__title title">
+        {{ article.title }}
+      </h2>
+    </div>
+    <div class="article__date">
+      <span>Posted {{ article.published_at | date: '%B %d, %Y' }}</span>
+    </div>
+    <div class="article__author">
+      <span> Author: {{ article.author }} </span>
+    </div>
+    <div class="article__content">
+      {{ article.content }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Article",
+  "class": "section-article",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Article"
+    }
+  ]
+}
+{% endschema %}
