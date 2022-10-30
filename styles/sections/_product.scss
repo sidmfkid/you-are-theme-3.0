@@ -4,7 +4,7 @@
 
 .product {
     @include section-grid;
-    place-items: center;
+    place-items: start;
     &__image-container {
     }
     &__image {

@@ -3905,7 +3905,7 @@ details[open] .search__modal {
 }
 
 .product {
-  place-items: center;
+  place-items: start;
 }
 @media screen and (max-width: 1496px) {
   .product {
