@@ -42,21 +42,30 @@
 @mixin section-grid {
   @include media-desktop-max {
     display: grid;
-    grid-template-columns: minmax(0rem, 16.2rem) repeat(12, 72px) minmax(0rem, 16.2rem);
+    grid-template-columns: minmax(0rem, 16.2rem) repeat(12, 72px) minmax(
+        0rem,
+        16.2rem
+      );
     grid-template-rows: auto;
     gap: 1.6rem 2.4rem;
   }
 
   @include media-tablet {
     display: grid;
-    grid-template-columns: minmax(0rem, 12rem) repeat(6, 128px) minmax(0rem, 12rem);
+    grid-template-columns: minmax(0rem, 12rem) repeat(6, 128px) minmax(
+        0rem,
+        12rem
+      );
     grid-template-rows: auto;
     gap: 1.6rem 2.4rem;
   }
 
   @include media-medium {
     display: grid;
-    grid-template-columns: minmax(0rem, 2.4rem) repeat(6, 1fr) minmax(0rem, 2.4rem);
+    grid-template-columns: minmax(0rem, 2.4rem) repeat(6, 1fr) minmax(
+        0rem,
+        2.4rem
+      );
     grid-template-rows: auto;
     gap: 1.6rem 2.4rem;
   }
@@ -69,7 +78,10 @@
   @include media-desktop {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: minmax(18.6rem, 1fr) repeat(12, 72px) minmax(18.6rem, 1fr);
+    grid-template-columns: minmax(18.6rem, 1fr) repeat(12, 72px) minmax(
+        18.6rem,
+        1fr
+      );
     grid-gap: 2.4rem;
   }
 }

@@ -1,109 +1,183 @@
 .section-product {
-    @include section-margin;
+  @include section-margin;
 }
 
 .product {
-    @include section-grid;
-    place-items: start;
-    &__image-container {
+  @include section-grid;
+
+  place-items: start;
+  &__image-container {
+  }
+  &__image {
+    height: auto;
+    width: 100%;
+  }
+  &__content {
+    height: min-content;
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  &__title-container {
+    width: 100%;
+    min-height: min-content;
+  }
+  &__description {
+    width: 100%;
+    min-height: min-content;
+  }
+  &__price-container {
+    width: 100%;
+    min-height: min-content;
+  }
+  &__form {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    // gap: 1.6rem;
+  }
+  &-form {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+  }
+
+  &__quantity,
+  &__variant,
+  &__button {
+    width: 100%;
+  }
+
+  &__selectors,
+  &__buttons {
+    display: flex;
+    justify-content: start;
+    gap: 1.6rem;
+    width: 100%;
+  }
+
+  &__quantity {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    &-label {
+      width: 100%;
     }
-    &__image {
-        height: auto;
-        width: 100%;
+    &-input-container {
+      border: 3px solid $brown-800;
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
     }
+    &-button {
+      cursor: pointer;
+      height: 4.8rem;
+    }
+    &-input {
+      -moz-appearance: textfield;
+      width: 100%;
+      height: 4rem;
+      @include button;
+      border: none;
+      text-align: center;
+      background-color: transparent;
+    }
+  }
+  &__variant {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    &-label {
+      width: 100%;
+    }
+
+    &-select {
+      width: 100%;
+      height: 7rem;
+      @include button;
+      padding: 0.8rem 1.2rem;
+      background-color: transparent;
+      border: 3px solid $brown-800;
+    }
+    &-option {
+      @include button;
+      padding: 0.8rem 1.2rem;
+      border: 3px solid $brown-800;
+    }
+  }
+
+  @include media-tablet {
     &__content {
-        height: min-content;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 1.6rem;
-    }
-    &__title-container {
-        width: 100%;
-        min-height: min-content;
-    }
-    &__description {
-        width: 100%;
-        min-height: min-content;
-    }
-    &__price-container {
-        width: 100%;
-        min-height: min-content;
-    }
-    &__form {
-        display: flex;
-        justify-content: start;
-        flex-wrap: wrap;
-        // gap: 1.6rem;
-    }
-    &-form {
-        display: flex;
-        justify-content: start;
-        flex-wrap: wrap;
-        gap: 1.6rem;
+      width: 100%;
+      margin: 0 0 !important;
     }
     &__selectors,
     &__buttons {
-        width: 100%;
-        display: flex;
-        justify-content: start;
-        flex-wrap: wrap;
-        gap: 2.4rem;
-    }
-    &__quantity,
-    &__variant,
-    &__button {
-        width: calc(50% - 1.2rem);
+      flex-direction: column;
+      //   width: 100%;
     }
     &__quantity {
-        display: flex;
-        justify-content: start;
-        flex-wrap: wrap;
-        &-label {
-            width: 100%;
+      width: 100%;
+      &-input-container {
+        width: 100%;
+      }
+    }
+    &__description {
+      & > div {
+        overflow-wrap: normal;
+        width: 100%;
+        & span {
+          display: inline-block;
+          overflow-wrap: normal;
         }
-        &-input-container {
-            border: 3px solid $brown-800;
-            padding: 0.8rem 1.2rem;
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: row;
-        }
-        &-button {
-            cursor: pointer;
-            height: 4.8rem;
-        }
-        &-input {
-            -moz-appearance: textfield;
-            width: 100%;
-            height: 4rem;
-            @include button;
-            border: none;
-            text-align: center;
-            background-color: transparent;
-        }
+      }
+    }
+  }
+
+  @include media-small {
+    &__content {
+      flex-direction: column;
+      width: 100%;
+      margin: 0 0 !important;
+      padding: 0 1.6rem;
+    }
+    &__selectors,
+    &__buttons {
+      width: 100%;
+      flex-direction: column;
+      display: flex;
+      justify-content: start;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+    }
+
+    &__button {
+      width: 100%;
+    }
+
+    &__quantity {
+      width: 100%;
+      &-input-container {
+        width: 100%;
+      }
     }
     &__variant {
-        display: flex;
-        justify-content: start;
-        flex-wrap: wrap;
-        &-label {
-            width: 100%;
-        }
-
-        &-select {
-            width: 100%;
-            height: 7rem;
-            @include button;
-            padding: 0.8rem 1.2rem;
-            background-color: transparent;
-            border: 3px solid $brown-800;
-        }
-        &-option {
-            @include button;
-            padding: 0.8rem 1.2rem;
-            border: 3px solid $brown-800;
-        }
+      width: 100%;
     }
+    &__description {
+      & > div {
+        overflow-wrap: normal;
+        width: 100%;
+        & span {
+          display: inline-block;
+          overflow-wrap: normal;
+        }
+      }
+    }
+  }
 }
