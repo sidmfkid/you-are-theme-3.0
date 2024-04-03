@@ -12,13 +12,13 @@
       }
   {% endstyle %}
   <header class="header__container" id="headerContainer">
-    <div class="header__logo">
+    <a class="header__logo" href="{{ shop.secure_url }}">
       {{
         section.settings.logo
         | image_url: width: 168
         | image_tag: widths: '168', alt: section.settings.logo.alt, class: 'header__logo-image'
       }}
-    </div>
+    </a>
     <label for="menu" class="header__menu-button">
       {% render 'icon-menu' %}
       <div class="close"></div>

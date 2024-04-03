@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "shopify theme dev --store=you-are-black.myshopify.com"
+    "dev": "shopify theme dev --store=you-are-black.myshopify.com --live-reload=hot-reload",
+    "dev-editor": "shopify theme dev --store=you-are-black.myshopify.com --live-reload=hot-reload --theme-editor-sync"
   },
   "keywords": [],
   "author": "",

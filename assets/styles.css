@@ -754,6 +754,7 @@ main {
   background-color: var(--dark--yellow--800);
 }
 .header__logo {
+  display: block;
   transition: all 0.2s ease;
   flex-basis: 0;
   width: 10rem;
