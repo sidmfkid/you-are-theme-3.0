@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "page-header": {
+      "type": "page-header",
+      "settings": {
+      }
+    },
+    "product": {
+      "type": "product",
+      "settings": {
+        "para": "",
+        "original_price_color": "#B98216",
+        "compare_price_color": "#2E9417"
+      }
+    }
+  },
+  "order": [
+    "page-header",
+    "product"
+  ]
+}
