@@ -8,9 +8,9 @@
     "product": {
       "type": "product",
       "settings": {
-        "para": "",
-        "original_price_color": "#B98216",
-        "compare_price_color": "#2E9417"
+        "para": "You can place a bulk order for our crayons if your school is qualified as a low-income\/high-poverty school or for Bookstores. We've given you the best prices on these bulk orders and factored in shipping\/taxes. If you have any questions or concerns or would like to place a custom order, please reach out to us for help. Email us at help@youareluv.com",
+        "original_price_color": "#b98216",
+        "compare_price_color": "#2e9417"
       }
     }
   },
