@@ -31,7 +31,7 @@
     @include section-container;
     background-color: $dark-yellow-200;
 
-    height: 8rem;
+    min-height: 8rem;
     border: 3px solid $dark-yellow-800;
     display: flex;
     justify-content: center;
@@ -209,11 +209,14 @@
     font-family: var(--font-heading-family);
     cursor: pointer;
     white-space: nowrap;
+    text-wrap: wrap;
+    text-align: center;
   }
   &__nav-list {
     display: flex;
     justify-content: center;
     gap: 1.6rem;
+    flex-wrap: wrap;
   }
 
   &__overlay {
@@ -235,6 +238,9 @@
     }
     &__nav {
       margin: 0 auto;
+      &-list {
+        padding-bottom: 1rem;
+      }
     }
     &__account {
       display: none;

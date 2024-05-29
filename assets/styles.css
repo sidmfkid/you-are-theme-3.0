@@ -616,7 +616,7 @@ main {
 }
 .header__container {
   background-color: var(--dark--yellow--200);
-  height: 8rem;
+  min-height: 8rem;
   border: 3px solid var(--dark--yellow--800);
   display: flex;
   justify-content: center;
@@ -795,11 +795,14 @@ main {
   font-family: var(--font-heading-family);
   cursor: pointer;
   white-space: nowrap;
+  text-wrap: wrap;
+  text-align: center;
 }
 .header__nav-list {
   display: flex;
   justify-content: center;
   gap: 1.6rem;
+  flex-wrap: wrap;
 }
 .header__overlay {
   display: none;
@@ -819,6 +822,9 @@ main {
   }
   .header__nav {
     margin: 0 auto;
+  }
+  .header__nav-list {
+    padding-bottom: 1rem;
   }
   .header__account {
     display: none;
