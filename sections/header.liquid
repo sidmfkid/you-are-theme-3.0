@@ -34,8 +34,26 @@
     <nav class="header__nav">
       <ul class="header__nav-list">
         {% for link in section.settings.header_menu.links %}
-          <li class="header__nav-item">
+          <li class="header__nav-item {% if link.links.size > 0 %}has-child{% endif %} {% if link.active %}active{% endif %}">            
+          {% if link.links.size == 0 %}
             <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endif %}
+
+            {% if link.links.size > 0 %}
+          <div class="header__nav-title">{{ link.title }}</div>
+
+            <ul class="header__nav-list-child">
+              <li class="header__nav-item child">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+              {%  for child_link in link.links %}
+                <li class="header__nav-item child">
+                  <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                </li>
+              {% endfor %}
+
+              </ul>
+            {% endif %}
           </li>
         {% endfor %}
       </ul>
