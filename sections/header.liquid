@@ -34,14 +34,13 @@
     <nav class="header__nav">
       <ul class="header__nav-list">
         {% for link in section.settings.header_menu.links %}
-          <li class="header__nav-item {% if link.links.size > 0 %}has-child{% endif %}">            
+          <li class="header__nav-item {% if link.links.size > 0 %}has-child{% endif %} {% if link.active %}active{% endif %}">            
           {% if link.links.size == 0 %}
-            
             <a href="{{ link.url }}">{{ link.title }}</a>
           {% endif %}
 
             {% if link.links.size > 0 %}
-          <div>{{ link.title }}</div>
+          <div class="header__nav-title">{{ link.title }}</div>
 
             <ul class="header__nav-list-child">
               <li class="header__nav-item child">

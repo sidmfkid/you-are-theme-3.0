@@ -211,35 +211,78 @@
     white-space: nowrap;
     text-wrap: wrap;
     text-align: center;
-    padding: 0.6rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    &.active {
+      &:hover,
+      &:active {
+        background-color: transparent !important;
+        a {
+          color: $dark-yellow-600 !important;
+        }
+      }
+      a {
+        position: relative;
+        color: $dark-yellow-600;
+        border-bottom: 3px solid transparent;
+        &::after {
+          transition: width 0.3s ease-in-out;
+          content: "";
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background-color: $dark-yellow-600;
+          width: 45%;
+          border-radius: 12px;
+        }
+
+        &:hover,
+        &:active {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
 
     a {
       color: $dark-yellow-800;
       text-decoration: none;
-    &:active {
-      color: $dark-yellow-200;
-      background-color: $dark-yellow-800;
-      border-radius: 10rem;
     }
 
-    &:hover, &:active {
+    &:not(.has-child):hover,
+    &:not(.has-child):active {
       background-color: $dark-yellow-800;
-      color: $dark-yellow-200;
+      a {
+        color: $dark-yellow-200;
+      }
     }
+
     &.child {
       font-size: font-size(regular);
       text-align: left;
+
+      &:hover,
+      &:active {
+        a {
+          color: $dark-yellow-200;
+          text-decoration: none;
+        }
+      }
     }
   }
   &__nav-list {
     display: flex;
     justify-content: center;
-    gap: 1.6rem;
+
     flex-wrap: wrap;
 
     & .has-child {
       position: relative;
-      &:hover, &:active {
+      &:hover,
+      &:active {
         .header__nav-list-child {
           display: block;
           opacity: 1;
@@ -265,18 +308,12 @@
         display: block;
         padding: 0.8rem;
         cursor: pointer;
-        &:hover, &:active {
-
+        &:hover,
+        &:active {
           background-color: $dark-yellow-800;
           color: $dark-yellow-200;
         }
       }
-    }
-
-    &-child.open {
-      display: block;
-      opacity: 1;
-      visibility: visible;
     }
   }
 
@@ -299,8 +336,56 @@
     }
     &__nav {
       margin: 0 auto;
+
+      &-item.has-child {
+        &:hover,
+        &:active {
+          background-color: transparent;
+        }
+
+        &:not(.has-child):hover,
+        &:not(.has-child):active {
+          background-color: transparent;
+          color: $dark-yellow-800;
+          border: 3px solid $dark-yellow-800;
+          border-bottom: none;
+        }
+
+        &.child {
+          &:hover,
+          &:active {
+            border: none;
+          }
+        }
+      }
+
+      &-item {
+        padding: 0.4rem 0.6rem;
+
+        &:not(.has-child):hover,
+        &:not(.has-child):active {
+          background-color: transparent;
+
+          transform: scale(1.1);
+          a {
+            color: $dark-yellow-800;
+          }
+        }
+
+        &.child {
+          &:not(.has-child):hover,
+          &:not(.has-child):active {
+            transform: scale(1);
+            background-color: $dark-yellow-800;
+            a {
+              color: $dark-yellow-200;
+            }
+          }
+        }
+      }
       &-list {
         padding-bottom: 1rem;
+        width: 100%;
       }
     }
     &__account {
@@ -320,6 +405,59 @@
       visibility: hidden;
       overflow: hidden;
       transition: opacity 0.3s ease;
+      &-list {
+        width: 100%;
+        .has-child {
+          width: 100%;
+        }
+        &-child {
+          display: none;
+          position: relative;
+          top: 0;
+          width: auto;
+          border-top: none;
+        }
+      }
+      &-item.child {
+        position: relative;
+        border-bottom: 2px solid transparent;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background-color: $dark-yellow-800;
+          width: 100%;
+          border-radius: 4px;
+          transition: width 0.3s ease;
+        }
+        &:hover,
+        &:active {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+      &-item {
+        &.has-child {
+          .header__nav-title {
+            border: 3px solid transparent;
+            width: 100%;
+            border-bottom: none;
+          }
+          &:hover,
+          &:active {
+            .header__nav-title {
+              background-color: transparent;
+              color: $dark-yellow-800;
+              border: 3px solid $dark-yellow-800;
+              border-bottom: none;
+            }
+          }
+        }
+      }
     }
     &__menu-button {
       // position: relative;
@@ -375,7 +513,7 @@
         &::before {
           transform: rotate(-45deg);
         }
-        transform: translate(0, 50px);
+        transform: translate(0, 100%);
         transition: transform 0.4s ease-in-out;
 
         // display: block;
@@ -391,7 +529,7 @@
   }
   #menu:checked ~ .header .header__container {
     transition: transform 0.4s ease-in-out;
-    overflow-y: scroll;
+    overflow-y: visible;
     .header__logo {
       position: sticky;
       z-index: 10;
@@ -468,7 +606,7 @@
         width: 100%;
         position: absolute;
 
-        transform: translate(0, -50px);
+        transform: translate(0, -150px);
         transition: transform 0.4s ease-in-out;
       }
       .cart-active {
@@ -498,6 +636,8 @@
     opacity: 1;
     .header__container {
       position: unset;
+      overflow-y: scroll;
+
       margin-top: 1.6rem;
       margin-bottom: 1.6rem;
       position: relative;

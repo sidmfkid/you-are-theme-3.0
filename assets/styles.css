@@ -797,26 +797,62 @@ main {
   white-space: nowrap;
   text-wrap: wrap;
   text-align: center;
-  padding: 0.6rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
 }
-.header__nav-item:hover {
+.header__nav-item.active:hover, .header__nav-item.active:active {
+  background-color: transparent !important;
+}
+.header__nav-item.active:hover a, .header__nav-item.active:active a {
+  color: var(--dark--yellow--600) !important;
+}
+.header__nav-item.active a {
+  position: relative;
+  color: var(--dark--yellow--600);
+  border-bottom: 3px solid transparent;
+}
+.header__nav-item.active a::after {
+  transition: width 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--dark--yellow--600);
+  width: 45%;
+  border-radius: 12px;
+}
+.header__nav-item.active a:hover::after, .header__nav-item.active a:active::after {
+  width: 100%;
+}
+.header__nav-item a {
+  color: var(--dark--yellow--800);
+  text-decoration: none;
+}
+.header__nav-item:not(.has-child):hover, .header__nav-item:not(.has-child):active {
   background-color: var(--dark--yellow--800);
+}
+.header__nav-item:not(.has-child):hover a, .header__nav-item:not(.has-child):active a {
   color: var(--dark--yellow--200);
 }
 .header__nav-item.child {
   font-size: calc(0.85rem + 0.5vw);
   text-align: left;
 }
+.header__nav-item.child:hover a, .header__nav-item.child:active a {
+  color: var(--dark--yellow--200);
+  text-decoration: none;
+}
 .header__nav-list {
   display: flex;
   justify-content: center;
-  gap: 1.6rem;
   flex-wrap: wrap;
 }
 .header__nav-list .has-child {
   position: relative;
 }
-.header__nav-list .has-child:hover .header__nav-list-child {
+.header__nav-list .has-child:hover .header__nav-list-child, .header__nav-list .has-child:active .header__nav-list-child {
   display: block;
   opacity: 1;
   visibility: visible;
@@ -841,14 +877,9 @@ main {
   padding: 0.8rem;
   cursor: pointer;
 }
-.header__nav-list-child-item:hover {
+.header__nav-list-child-item:hover, .header__nav-list-child-item:active {
   background-color: var(--dark--yellow--800);
   color: var(--dark--yellow--200);
-}
-.header__nav-list-child.open {
-  display: block;
-  opacity: 1;
-  visibility: visible;
 }
 .header__overlay {
   display: none;
@@ -869,8 +900,38 @@ main {
   .header__nav {
     margin: 0 auto;
   }
+  .header__nav-item.has-child:hover, .header__nav-item.has-child:active {
+    background-color: transparent;
+  }
+  .header__nav-item.has-child:not(.has-child):hover, .header__nav-item.has-child:not(.has-child):active {
+    background-color: transparent;
+    color: var(--dark--yellow--800);
+    border: 3px solid var(--dark--yellow--800);
+    border-bottom: none;
+  }
+  .header__nav-item.has-child.child:hover, .header__nav-item.has-child.child:active {
+    border: none;
+  }
+  .header__nav-item {
+    padding: 0.4rem 0.6rem;
+  }
+  .header__nav-item:not(.has-child):hover, .header__nav-item:not(.has-child):active {
+    background-color: transparent;
+    transform: scale(1.1);
+  }
+  .header__nav-item:not(.has-child):hover a, .header__nav-item:not(.has-child):active a {
+    color: var(--dark--yellow--800);
+  }
+  .header__nav-item.child:not(.has-child):hover, .header__nav-item.child:not(.has-child):active {
+    transform: scale(1);
+    background-color: var(--dark--yellow--800);
+  }
+  .header__nav-item.child:not(.has-child):hover a, .header__nav-item.child:not(.has-child):active a {
+    color: var(--dark--yellow--200);
+  }
   .header__nav-list {
     padding-bottom: 1rem;
+    width: 100%;
   }
   .header__account {
     display: none;
@@ -884,6 +945,49 @@ main {
     visibility: hidden;
     overflow: hidden;
     transition: opacity 0.3s ease;
+  }
+  .header__nav-list {
+    width: 100%;
+  }
+  .header__nav-list .has-child {
+    width: 100%;
+  }
+  .header__nav-list-child {
+    display: none;
+    position: relative;
+    top: 0;
+    width: auto;
+    border-top: none;
+  }
+  .header__nav-item.child {
+    position: relative;
+    border-bottom: 2px solid transparent;
+  }
+  .header__nav-item.child::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--dark--yellow--800);
+    width: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+  .header__nav-item.child:hover::after, .header__nav-item.child:active::after {
+    width: 100%;
+  }
+  .header__nav-item.has-child .header__nav-title {
+    border: 3px solid transparent;
+    width: 100%;
+    border-bottom: none;
+  }
+  .header__nav-item.has-child:hover .header__nav-title, .header__nav-item.has-child:active .header__nav-title {
+    background-color: transparent;
+    color: var(--dark--yellow--800);
+    border: 3px solid var(--dark--yellow--800);
+    border-bottom: none;
   }
   .header__menu-button {
     z-index: 10;
@@ -915,7 +1019,7 @@ main {
     position: relative;
     width: 100%;
     height: 100%;
-    transform: translate(0, 50px);
+    transform: translate(0, 100%);
     transition: transform 0.4s ease-in-out;
   }
   #menu:not(:checked) ~ .header .header__container .header__menu-button .close::after, #menu:not(:checked) ~ .header .header__container .header__menu-button .close::before {
@@ -944,7 +1048,7 @@ main {
   }
   #menu:checked ~ .header .header__container {
     transition: transform 0.4s ease-in-out;
-    overflow-y: scroll;
+    overflow-y: visible;
     position: relative;
   }
   #menu:checked ~ .header .header__container .header__logo {
@@ -1011,7 +1115,7 @@ main {
   #menu:checked ~ .header .header__container .header__menu-button .icon-menu {
     width: 100%;
     position: absolute;
-    transform: translate(0, -50px);
+    transform: translate(0, -150px);
     transition: transform 0.4s ease-in-out;
   }
   #menu:checked ~ .header .header__container .header__menu-button .cart-active {
@@ -1039,6 +1143,7 @@ main {
   }
   #menu:checked ~ .header .header__container {
     position: unset;
+    overflow-y: scroll;
     margin-top: 1.6rem;
     margin-bottom: 1.6rem;
     position: relative;
