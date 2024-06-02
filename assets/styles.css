@@ -797,58 +797,12 @@ main {
   white-space: nowrap;
   text-wrap: wrap;
   text-align: center;
-  padding: 0.6rem;
-}
-.header__nav-item:hover {
-  background-color: var(--dark--yellow--800);
-  color: var(--dark--yellow--200);
-}
-.header__nav-item.child {
-  font-size: calc(0.85rem + 0.5vw);
-  text-align: left;
 }
 .header__nav-list {
   display: flex;
   justify-content: center;
   gap: 1.6rem;
   flex-wrap: wrap;
-}
-.header__nav-list .has-child {
-  position: relative;
-}
-.header__nav-list .has-child:hover .header__nav-list-child {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-.header__nav-list-child {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: var(--dark--yellow--200);
-  border: 3px solid var(--dark--yellow--800);
-  padding: 0.8rem;
-  z-index: 10;
-  transition: all 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-  width: max-content;
-}
-.header__nav-list-child-item {
-  display: block;
-  padding: 0.8rem;
-  cursor: pointer;
-}
-.header__nav-list-child-item:hover {
-  background-color: var(--dark--yellow--800);
-  color: var(--dark--yellow--200);
-}
-.header__nav-list-child.open {
-  display: block;
-  opacity: 1;
-  visibility: visible;
 }
 .header__overlay {
   display: none;

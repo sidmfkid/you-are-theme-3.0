@@ -211,73 +211,12 @@
     white-space: nowrap;
     text-wrap: wrap;
     text-align: center;
-    padding: 0.6rem;
-
-    a {
-      color: $dark-yellow-800;
-      text-decoration: none;
-    &:active {
-      color: $dark-yellow-200;
-      background-color: $dark-yellow-800;
-      border-radius: 10rem;
-    }
-
-    &:hover, &:active {
-      background-color: $dark-yellow-800;
-      color: $dark-yellow-200;
-    }
-    &.child {
-      font-size: font-size(regular);
-      text-align: left;
-    }
   }
   &__nav-list {
     display: flex;
     justify-content: center;
     gap: 1.6rem;
     flex-wrap: wrap;
-
-    & .has-child {
-      position: relative;
-      &:hover, &:active {
-        .header__nav-list-child {
-          display: block;
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-    }
-    &-child {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background-color: $dark-yellow-200;
-      border: 3px solid $dark-yellow-800;
-      padding: 0.8rem;
-      z-index: 10;
-      transition: all 0.3s ease;
-      opacity: 0;
-      visibility: hidden;
-      width: max-content;
-      &-item {
-        display: block;
-        padding: 0.8rem;
-        cursor: pointer;
-        &:hover, &:active {
-
-          background-color: $dark-yellow-800;
-          color: $dark-yellow-200;
-        }
-      }
-    }
-
-    &-child.open {
-      display: block;
-      opacity: 1;
-      visibility: visible;
-    }
   }
 
   &__overlay {

@@ -34,27 +34,8 @@
     <nav class="header__nav">
       <ul class="header__nav-list">
         {% for link in section.settings.header_menu.links %}
-          <li class="header__nav-item {% if link.links.size > 0 %}has-child{% endif %}">            
-          {% if link.links.size == 0 %}
-            
+          <li class="header__nav-item">
             <a href="{{ link.url }}">{{ link.title }}</a>
-          {% endif %}
-
-            {% if link.links.size > 0 %}
-          <div>{{ link.title }}</div>
-
-            <ul class="header__nav-list-child">
-              <li class="header__nav-item child">
-                <a href="{{ link.url }}">{{ link.title }}</a>
-              </li>
-              {%  for child_link in link.links %}
-                <li class="header__nav-item child">
-                  <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                </li>
-              {% endfor %}
-
-              </ul>
-            {% endif %}
           </li>
         {% endfor %}
       </ul>
@@ -112,33 +93,13 @@
 </div>
 
 {% javascript %}
-
   class StickyHeader extends HTMLElement {
     constructor() {
       super();
-
-      this.linkWithChildren = this.querySelectorAll('.header__nav-item.has-child');
-
-      this.linkWithChildren.forEach(link => {
-        link.addEventListener('click', this.toggleChildMenu.bind(this));
-      });
-
-    }
-
-    toggleChildMenu(event) {
-      const target = event.currentTarget;
-      console.log("🚀 ~ file: header.liquid:122 ~ StickyHeader ~ toggleChildMenu ~ target:", target)
-      const childMenu = target.querySelector('.header__nav-list-child');
-
-      if (childMenu) {
-        childMenu.classList.toggle('open');
-      }
     }
 
     connectedCallback() {
       this.header = document.getElementById('shopify-section-header');
-
-
       this.headerBounds = {};
       this.currentScrollTop = 0;
       this.preventReveal = false;
