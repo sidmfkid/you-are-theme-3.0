@@ -161,6 +161,15 @@
       width: 3px;
       background-color: $dark-yellow-800;
     }
+    &-signup,
+    &-login {
+      .header__nav-item {
+        &:hover,
+        &:active {
+          color: $dark-yellow-200;
+        }
+      }
+    }
   }
 
   &__logo {
@@ -738,6 +747,12 @@
         &-signup {
           width: 100%;
           text-align: right;
+          .header__nav-item {
+            &:hover,
+            &:active {
+              color: $dark-yellow-200;
+            }
+          }
         }
         &-login {
           width: 100%;

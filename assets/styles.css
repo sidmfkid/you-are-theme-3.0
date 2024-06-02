@@ -753,6 +753,9 @@ main {
   width: 3px;
   background-color: var(--dark--yellow--800);
 }
+.header__account-signup .header__nav-item:hover, .header__account-signup .header__nav-item:active, .header__account-login .header__nav-item:hover, .header__account-login .header__nav-item:active {
+  color: var(--dark--yellow--200);
+}
 .header__logo {
   display: block;
   transition: all 0.2s ease;
@@ -1233,6 +1236,9 @@ main {
   #menu:checked ~ .header .header__container .header__account-signup {
     width: 100%;
     text-align: right;
+  }
+  #menu:checked ~ .header .header__container .header__account-signup .header__nav-item:hover, #menu:checked ~ .header .header__container .header__account-signup .header__nav-item:active {
+    color: var(--dark--yellow--200);
   }
   #menu:checked ~ .header .header__container .header__account-login {
     width: 100%;
