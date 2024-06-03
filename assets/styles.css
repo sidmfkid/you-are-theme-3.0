@@ -859,6 +859,9 @@ main {
   display: block;
   opacity: 1;
   visibility: visible;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 .header__nav-list-child {
   display: none;
@@ -961,6 +964,7 @@ main {
     top: 0;
     width: auto;
     border-top: none;
+    padding-top: 0px;
   }
   .header__nav-item.child {
     position: relative;
