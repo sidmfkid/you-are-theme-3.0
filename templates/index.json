@@ -11,6 +11,9 @@
   "sections": {
     "2895d287-d5a6-4a88-b2c4-ef0d1e7e949c": {
       "type": "main-hero",
+      "custom_css": [
+
+      ],
       "settings": {
         "heading": "Representation Matters",
         "para": "Our Hair Affirmation books are now available for pre-sale! Each page offers a positive word of affirmation and features hairstyles and haircuts that celebrate our culture and history. In our commitment to inclusivity, we offer editions for Albino, Autism, Vitiligo, and Down Syndrome, ensuring all our children are represented and given the visibility they deserve.\n<br><br>\n*For every specialty picture book sold (Albino, Autism, Down Syndrome and Vitiligo), $1.00 will be donated to a foundation supporting these causes. <br><br>\n\n\n*Presale orders will be shipped starting December 1st, 2024.",
@@ -21,13 +24,12 @@
     },
     "main_image_with_text_Pd7kBW": {
       "type": "main-image-with-text",
-      "disabled": true,
       "settings": {
         "heading": "Special Editions",
-        "para": "To the Parents, Aunties, Uncles, Siblings and Friends of our special edition purchasers, WE SEE YOU! The You Are brand is intentional in giving authentic representation to our black and brown babies. Therefore, your awareness colors are throughout each specialty book.  Yellow for Albino, Blue and Yellow for Down Syndrome, Purple for Vitiligo and for our Autistic children, each headshot has a different background color with the Infiniti loop on the opposite page.",
+        "para": "To the Parents, Aunties, Uncles, Siblings and Friends of our special edition purchasers, WE SEE YOU! The You Are Brand is intentional in giving authentic representation to our black and brown babies. Therefore, awareness colors are throughout each specialty book.  Yellow for Albino, Blue and Yellow for Down Syndrome, Purple for Vitiligo and for our Autistic children, each headshot has a different awareness color with the Infiniti loop on the opposite page. \nRepresentation Matters.",
         "button_text": "Shop Now",
         "button_url": "",
-        "image": "shopify:\/\/shop_images\/ALB_O_Detail_1_Large_200x200_7ccb2023-4147-40a3-b0a6-2b4061dade9c.jpg",
+        "image": "shopify:\/\/shop_images\/DWN_O_Inside_Large_200x200_32c8e208-ef4c-4793-a842-c275a63f3353.jpg",
         "image_bg": "#e6ad59",
         "heading_color": "#e6ad59",
         "para_color": "#e6ad59",
