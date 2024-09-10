@@ -19,6 +19,22 @@
         "image": "shopify:\/\/shop_images\/IMG_9003.jpg"
       }
     },
+    "main_image_with_text_Pd7kBW": {
+      "type": "main-image-with-text",
+      "settings": {
+        "heading": "Special Editions",
+        "para": "To the parents, aunties, uncles, siblings and friends of our specialty edition purchasers, WE SEE YOU! The You Are brand is intentional in giving authentic representation to our black and brown babies. Your awareness colors are throughout each specialty book.  Yellow for Albino, Blue and Yellow for Down Syndrome, Purple for Vitiligo and for our Autistic children each headshot has a different background color with the Infiniti loop on the opposite page.",
+        "button_text": "Shop Now",
+        "button_url": "",
+        "image_bg": "#e6ad59",
+        "heading_color": "#e6ad59",
+        "para_color": "#e6ad59",
+        "order": "regular",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeUp",
+        "button_color": "primary"
+      }
+    },
     "80e0a61d-c4e0-480c-b8c0-28d2f7870c39": {
       "type": "main-image-with-text",
       "settings": {
@@ -156,6 +172,7 @@
   },
   "order": [
     "2895d287-d5a6-4a88-b2c4-ef0d1e7e949c",
+    "main_image_with_text_Pd7kBW",
     "80e0a61d-c4e0-480c-b8c0-28d2f7870c39",
     "9585f8c6-1402-45a8-9eda-2bb98b25fd95",
     "137601e7-4230-41dd-8467-e9816e4d52fd",
