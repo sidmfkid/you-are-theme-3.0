@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "page-header": {
@@ -12,10 +21,31 @@
         "original_price_color": "#b98216",
         "compare_price_color": "#2e9417"
       }
+    },
+    "main_image_with_text_2_b7CiLU": {
+      "type": "main-image-with-text-2",
+      "disabled": true,
+      "settings": {
+        "heading": "Lets Get Started!",
+        "para": "Lorem Ispum",
+        "button_text": "Shop Now",
+        "button_url": "",
+        "image": "shopify:\/\/shop_images\/VITI_O_CB_Inside_Large-SQUARE.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976A11",
+        "para_color": "#976A11",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "order": "regular",
+        "row-order": "row-1",
+        "stretch": "true",
+        "button_color": "primary"
+      }
     }
   },
   "order": [
     "page-header",
-    "product"
+    "product",
+    "main_image_with_text_2_b7CiLU"
   ]
 }
