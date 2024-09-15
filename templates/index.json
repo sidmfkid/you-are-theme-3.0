@@ -11,12 +11,33 @@
   "sections": {
     "2895d287-d5a6-4a88-b2c4-ef0d1e7e949c": {
       "type": "main-hero",
+      "custom_css": [
+
+      ],
       "settings": {
         "heading": "Representation Matters",
-        "para": "Our Hair Affirmation books are now available for pre-sale! Each page offers not just a positive affirmation but also features hairstyles and haircuts that celebrate our culture and history. In our commitment to inclusivity, we offer editions for Albino, Autism, Vitiligo, and Down Syndrome, ensuring all our children are represented and cherished.\n<br><br>\n*For every specialty picture book sold (Albino, Autism, Down Syndrome and Vitiligo), $1.00 will be donated to a foundation supporting these causes. <br><br>\n\n\n*Presale orders will be shipped starting December 1st, 2024.",
+        "para": "Our Hair Affirmation books are now available for pre-sale! Each page provides a positive affirmation, showcasing hairstyles and haircuts that honor our culture and history. To promote inclusivity, we offer special editions for children with Albinism, Autism, Vitiligo, and Down Syndrome, ensuring every child is represented and receives the visibility they deserve.\n<br><br>\n*For every specialty picture book sold (Albino, Autism, Down Syndrome and Vitiligo), $1.00 will be donated to a foundation supporting these causes. <br><br>\n\n\n*Presale orders will be shipped starting December 1st, 2024.",
         "button_text": "Shop Now",
         "button_url": "shopify:\/\/products\/book-presale",
         "image": "shopify:\/\/shop_images\/IMG_9003.jpg"
+      }
+    },
+    "main_image_with_text_Pd7kBW": {
+      "type": "main-image-with-text",
+      "disabled": true,
+      "settings": {
+        "heading": "Special Editions",
+        "para": "To the parents, aunties, uncles, siblings, and friends of our special edition customers, WE RECOGNIZE YOU! At the You Are Brand; we are dedicated to offering genuine representation for our Black and Brown children. That’s why each special edition book incorporates specific awareness colors—yellow for Albinism, blue and yellow for Down Syndrome, purple for Vitiligo, and for our Autistic children, each headshot features a unique awareness color with the infinity loop displayed on the opposite page. Representation matters.",
+        "button_text": "Shop Now",
+        "button_url": "",
+        "image": "shopify:\/\/shop_images\/DWN_O_Inside_Large_200x200_32c8e208-ef4c-4793-a842-c275a63f3353.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#e6ad59",
+        "para_color": "#e6ad59",
+        "order": "regular",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeUp",
+        "button_color": "primary"
       }
     },
     "80e0a61d-c4e0-480c-b8c0-28d2f7870c39": {
@@ -156,6 +177,7 @@
   },
   "order": [
     "2895d287-d5a6-4a88-b2c4-ef0d1e7e949c",
+    "main_image_with_text_Pd7kBW",
     "80e0a61d-c4e0-480c-b8c0-28d2f7870c39",
     "9585f8c6-1402-45a8-9eda-2bb98b25fd95",
     "137601e7-4230-41dd-8467-e9816e4d52fd",
