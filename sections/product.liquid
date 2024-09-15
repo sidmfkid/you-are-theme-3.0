@@ -5,6 +5,7 @@
 
 <section id="product" data-section="{{ section.id }}" class="product">
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-image.js' | asset_url }}" defer="defer"></script>
 
   {% if product.selected_or_first_available_variant.compare_at_price %}
     {%- capture strikeThrough -%}text-decoration: line-through;{%- endcapture -%}
@@ -20,7 +21,13 @@
     #shopify-section-{{ section.id }} .product__sale-price { color: {{ section.settings.compare_price_color }} !important; {{ strikeThrough }}}
   {% endstyle %}
   <div class="product__image-container left">
-    <img src="{{ product.featured_image | image_url }}" alt="" class="product__image">
+    <div class="previous">
+      PREVIOUS
+    </div>
+    <img src="{{ product.featured_image | image_url }}" alt="" class="product__image" height="{{ product.featured_image.height }}" width="{{  product.featured_image.width }}">
+    <div class="next">
+      NEXT
+    </div>
   </div>
   <div class="product__content right">
     <div class="product__title-container">
@@ -109,6 +116,27 @@
       ]
     }
   </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const productImage = document.querySelector('.product__image');
+      const previous = document.querySelector('.previous');
+      const next = document.querySelector('.next');
+      const images = {{ product.images | json }};
+      let currentImage = 0;
+
+      previous.addEventListener('click', function() {
+        currentImage = currentImage === 0 ? images.length - 1 : currentImage - 1;
+        productImage.src = images[currentImage].src;
+      });
+
+      next.addEventListener('click', function() {
+        currentImage = currentImage === images.length - 1 ? 0 : currentImage + 1;
+        productImage.src = images[currentImage].src;
+      });
+    });
+  </script>
+
 </section>
 
 {% schema %}
