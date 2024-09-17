@@ -40,6 +40,25 @@
         "button_color": "primary"
       }
     },
+    "main_image_with_text_2_HLd4BG": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Special Editions",
+        "para": "To the parents, aunties, uncles, siblings, and friends of our special edition customers, WE RECOGNIZE YOU! At the You Are Brand; we are dedicated to offering genuine representation for our Black and Brown children. That’s why each special edition book incorporates specific awareness colors—yellow for Albinism, blue and yellow for Down Syndrome, purple for Vitiligo, and for our Autistic children, each headshot features a unique awareness color with the infinity loop displayed on the opposite page. Representation matters.",
+        "button_text": "Shop Now",
+        "button_url": "shopify:\/\/products\/crayon-coloring-book-presale-bundle",
+        "image": "shopify:\/\/shop_images\/VITI_T_Hard_Large-SQUARE.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976A11",
+        "para_color": "#976A11",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "order": "regular",
+        "row-order": "row-1",
+        "stretch": "true",
+        "button_color": "primary"
+      }
+    },
     "80e0a61d-c4e0-480c-b8c0-28d2f7870c39": {
       "type": "main-image-with-text",
       "settings": {
@@ -178,6 +197,7 @@
   "order": [
     "2895d287-d5a6-4a88-b2c4-ef0d1e7e949c",
     "main_image_with_text_Pd7kBW",
+    "main_image_with_text_2_HLd4BG",
     "80e0a61d-c4e0-480c-b8c0-28d2f7870c39",
     "9585f8c6-1402-45a8-9eda-2bb98b25fd95",
     "137601e7-4230-41dd-8467-e9816e4d52fd",
