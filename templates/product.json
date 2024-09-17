@@ -13,7 +13,7 @@
       "type": "page-header",
       "custom_css": [
         "h1 {font-size: 1.6rem; line-height: 1.6rem;}",
-        "a {font-size: 1.2rem; line-height: .8rem;}"
+        "a {font-size: 1.2rem; line-height: 0.8rem;}"
       ],
       "settings": {
       }
@@ -28,7 +28,6 @@
     },
     "main_image_with_text_2_b7CiLU": {
       "type": "main-image-with-text-2",
-      "disabled": true,
       "settings": {
         "heading": "Lets Get Started!",
         "para": "Lorem Ispum",
@@ -41,6 +40,25 @@
         "animate_title": "fadeLeft",
         "animate_img": "fadeRight",
         "order": "regular",
+        "row-order": "row-2",
+        "stretch": "true",
+        "button_color": "primary"
+      }
+    },
+    "main_image_with_text_2_pyaMqP": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Lets Get Started!",
+        "para": "In a Society that often devalues Black hair and skin, we want our children to know that their hair and skin is beautiful, just as God intended.",
+        "button_text": "Shop Now",
+        "button_url": "",
+        "image": "shopify:\/\/shop_images\/ORIG_T_Inside_Large-SQUARE.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976A11",
+        "para_color": "#976A11",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "order": "reverse",
         "row-order": "row-1",
         "stretch": "true",
         "button_color": "primary"
@@ -50,6 +68,7 @@
   "order": [
     "page-header",
     "product",
-    "main_image_with_text_2_b7CiLU"
+    "main_image_with_text_2_b7CiLU",
+    "main_image_with_text_2_pyaMqP"
   ]
 }
