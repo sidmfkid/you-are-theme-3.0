@@ -12,7 +12,8 @@
     "page-header": {
       "type": "page-header",
       "custom_css": [
-        "h1 {font-size: 1.6rem; line-height: 1.6rem;}"
+        "h1 {font-size: 1.6rem; line-height: 1.6rem;}",
+        "a {font-size: 1.2rem; line-height: .8rem;}"
       ],
       "settings": {
       }
