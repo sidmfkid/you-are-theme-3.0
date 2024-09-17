@@ -3,7 +3,11 @@
   .product__sale-price { color: {{ section.settings.compare_price_color }} !important; }
 {%- endcapture -%}
 
+{{ 'glide.core.css' | asset_url | stylesheet_tag }}
+
 <section id="product" data-section="{{ section.id }}" class="product">
+  <script defer crossorigin src="{{  'glide.js' | asset_url }}"></script>
+
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-image.js' | asset_url }}" defer="defer"></script>
 
@@ -21,12 +25,30 @@
     #shopify-section-{{ section.id }} .product__sale-price { color: {{ section.settings.compare_price_color }} !important; {{ strikeThrough }}}
   {% endstyle %}
   <div class="product__image-container left">
-    <div class="previous">
-      PREVIOUS
-    </div>
-    <img src="{{ product.featured_image | image_url }}" alt="" class="product__image" height="{{ product.featured_image.height }}" width="{{  product.featured_image.width }}">
-    <div class="next">
-      NEXT
+
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          {%- for image in product.media -%}
+            <li class="glide__slide">
+              <img src="{{ image.src | image_url }}" height="{{ image.height }}" width="{{ image.width }}">
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">{% render 'icon-iconify-arrow-left' | size: '3rem' %}</button>
+        
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+        {% render 'icon-iconify-arrow-right' | size: '3rem' %}
+        </button>
+      </div>
+      <div class="glide__controls" data-glide-el="controls[nav]">
+        {%- for image in product.media -%}
+          <button class="goTo go_to_image_{{ image.position | minus: 1 }}" data-glide-dir="={{ image.position | minus: 1 }}"></button>
+        {%- endfor -%}
+
+        </div>
     </div>
   </div>
   <div class="product__content right">
@@ -119,21 +141,40 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const productImage = document.querySelector('.product__image');
-      const previous = document.querySelector('.previous');
-      const next = document.querySelector('.next');
-      const images = {{ product.images | json }};
-      let currentImage = 0;
+      const images = {{ product.media | json }};
+      const product = {{ product | json }};
 
-      previous.addEventListener('click', function() {
-        currentImage = currentImage === 0 ? images.length - 1 : currentImage - 1;
-        productImage.src = images[currentImage].src;
-      });
+      const isProductPage = window.location.pathname.includes('/products');
+      
+      const glideSlides = document.querySelector('.glide__slides');
 
-      next.addEventListener('click', function() {
-        currentImage = currentImage === images.length - 1 ? 0 : currentImage + 1;
-        productImage.src = images[currentImage].src;
-      });
+      const glide = new Glide('.glide').mount({
+        type: 'carousel',
+        perView: 2,
+        })
+
+        const slidesImgSrcs = Array.from(
+          document.querySelectorAll(".glide__slide img")
+        ).map((el) => el.src);
+
+        const searchQp = new URLSearchParams(window.location.search);
+        const variantId = searchQp.get('variant');
+
+        const selectedVariant = product.variants.find((variant) => variant.id.toString() === variantId);
+
+        const selectedImgIndex = slidesImgSrcs.findIndex((src) => {
+          return src.includes(selectedVariant.featured_image.src);
+        });
+
+        glide.go(`=${selectedImgIndex}`);
+        const selectedSlide = document.querySelector(
+          `.go_to_image_${selectedImgIndex}`
+        );
+
+        if (selectedSlide){
+          selectedSlide.click();
+        }
+
     });
   </script>
 

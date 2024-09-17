@@ -111,6 +111,27 @@ class VariantSelects extends HTMLElement {
     if (!this.currentVariant) return;
     if (!this.currentVariant.featured_media) return;
 
+    const slidesImgSrcs = Array.from(
+      document.querySelectorAll(".glide__slide img")
+    ).map((el) => el.src);
+
+    const selectedImgIndex = slidesImgSrcs.findIndex((src) =>
+      src.includes(this.currentVariant.featured_media.preview_image.src)
+    );
+
+    const selectedSlide = document.querySelector(
+      `.go_to_image_${selectedImgIndex}`
+    );
+
+    if (selectedSlide) {
+      selectedSlide.click();
+    }
+
+    if (!selectedSlide) {
+      const firstSlide = document.querySelector(".go_to_image_1");
+      firstSlide.click();
+    }
+
     const mediaGalleries = document.querySelectorAll(
       `[id^="MediaGallery-${this.dataset.section}"]`
     );
