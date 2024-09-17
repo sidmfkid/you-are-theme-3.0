@@ -82,6 +82,25 @@
         "stretch": "true",
         "button_color": "primary"
       }
+    },
+    "main_image_with_text_2_Lr9Ltb": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Tahj's Crown: A Hair Affirmation Journey",
+        "para": "Tahj's hair affirmation book is a celebration of self-love and confidence designed to empower children to embrace their natural hair. Through vibrant illustrations the book encourages young readers to see their hair as a crown. Whether braided, in an Afro, or twisted, Thaj's story inspires kids to take pride in their hair, knowing it's a reflection of their culture, strength, and individuality.",
+        "button_text": "Shop Now",
+        "button_url": "",
+        "image": "shopify:\/\/shop_images\/ORIG_T_Paper_Large-SQUARE.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976A11",
+        "para_color": "#976A11",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "order": "regular",
+        "row-order": "row-1",
+        "stretch": "true",
+        "button_color": "primary"
+      }
     }
   },
   "order": [
@@ -89,6 +108,7 @@
     "product",
     "main_image_with_text_2_b7CiLU",
     "main_image_with_text_2_pyaMqP",
-    "main_image_with_text_2_TyaR64"
+    "main_image_with_text_2_TyaR64",
+    "main_image_with_text_2_Lr9Ltb"
   ]
 }
