@@ -11,6 +11,9 @@
   "sections": {
     "page-header": {
       "type": "page-header",
+      "custom_css": [
+        "h1 {font-size: 1.6rem; line-height: 1.6rem;}"
+      ],
       "settings": {
       }
     },
@@ -32,8 +35,8 @@
         "button_url": "",
         "image": "shopify:\/\/shop_images\/VITI_O_CB_Inside_Large-SQUARE.jpg",
         "image_bg": "#e6ad59",
-        "heading_color": "#976A11",
-        "para_color": "#976A11",
+        "heading_color": "#976a11",
+        "para_color": "#976a11",
         "animate_title": "fadeLeft",
         "animate_img": "fadeRight",
         "order": "regular",
