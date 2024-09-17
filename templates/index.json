@@ -16,7 +16,7 @@
       ],
       "settings": {
         "heading": "Representation Matters",
-        "para": "Our Hair Affirmation books are now available for pre-sale! Each page provides a positive affirmation, showcasing hairstyles and haircuts that honor our culture and history. To promote inclusivity, we offer special editions for children with Albinism, Autism, Vitiligo, and Down Syndrome, ensuring every child is represented and receives the visibility they deserve.\n<br><br>\n*For every specialty picture book sold (Albino, Autism, Down Syndrome and Vitiligo), $1.00 will be donated to a foundation supporting these causes. <br><br>\n\n\n*Presale orders will be shipped starting December 1st, 2024.",
+        "para": "Our Hair Affirmation books are now available for pre-sale! Each page provides a word of affirmation, showcasing hairstyles and haircuts that honor our culture and history. To promote inclusivity, we offer special editions for children with Albinism, Autism, Vitiligo, and Down Syndrome, ensuring every child is represented and receives the visibility they deserve.\n<br><br>\n*For every specialty picture book sold (Albino, Autism, Down Syndrome and Vitiligo), $1.00 will be donated to a foundation supporting these causes. <br><br>\n\n\n*Presale orders will be shipped starting December 1st, 2024.",
         "button_text": "Shop Now",
         "button_url": "shopify:\/\/products\/book-presale",
         "image": "shopify:\/\/shop_images\/IMG_9003.jpg"
@@ -40,11 +40,30 @@
         "button_color": "primary"
       }
     },
+    "main_image_with_text_2_HLd4BG": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Special Editions",
+        "para": "To the parents, aunties, uncles, siblings, and friends of our special edition customers, WE RECOGNIZE YOU! At the You Are Brand we are dedicated to offering genuine representation for our Black and Brown children. That’s why each special edition book incorporates specific awareness colors—yellow for Albinism, blue and yellow for Down Syndrome, purple for Vitiligo, and for our Autistic children, each headshot features a unique awareness color with the infinity loop displayed on the opposite page. Representation matters.",
+        "button_text": "Shop Now",
+        "button_url": "shopify:\/\/products\/bundle",
+        "image": "shopify:\/\/shop_images\/VITI_T_Hard_Large-SQUARE.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976a11",
+        "para_color": "#976a11",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "order": "regular",
+        "row-order": "row-1",
+        "stretch": "true",
+        "button_color": "primary"
+      }
+    },
     "80e0a61d-c4e0-480c-b8c0-28d2f7870c39": {
       "type": "main-image-with-text",
       "settings": {
         "heading": "Why Representation Is Important",
-        "para": "Studies have shown that seeing positive representations of oneself in the marketplace is beneficial for children growing up. It can help form a positive self image and improve self esteem. It can also help children feel more included and accepted in society.",
+        "para": "Research indicates that positive self-representation in the marketplace has beneficial effects on children's development. It contributes to the formation of a positive self-image and the enhancement of self-esteem. Additionally, it can make children feel more included and accepted within society.",
         "button_text": "Shop Now",
         "button_url": "shopify:\/\/products\/you-are-10-piece-crayons",
         "image": "shopify:\/\/shop_images\/green-crayon-desktop.png",
@@ -87,7 +106,7 @@
       "type": "main-image-with-text-2",
       "settings": {
         "heading": "Giving Back",
-        "para": "The You Are Brand is committed to community and giving back! Every time we receive an order a box will be given to an underprivileged Child. They too need to know that they are beautiful, talented, valued and much more!",
+        "para": "The You Are Brand is committed to community and giving back! Every time we receive an order a box of our custom crayons will be given to an underprivileged Child. They too need to know that they are beautiful, talented, valued and much more!",
         "button_text": "Shop Now",
         "button_url": "shopify:\/\/products\/you-are-10-piece-crayons",
         "image": "shopify:\/\/shop_images\/african-american-child-in-class-drawing-landscape.jpg",
@@ -178,6 +197,7 @@
   "order": [
     "2895d287-d5a6-4a88-b2c4-ef0d1e7e949c",
     "main_image_with_text_Pd7kBW",
+    "main_image_with_text_2_HLd4BG",
     "80e0a61d-c4e0-480c-b8c0-28d2f7870c39",
     "9585f8c6-1402-45a8-9eda-2bb98b25fd95",
     "137601e7-4230-41dd-8467-e9816e4d52fd",

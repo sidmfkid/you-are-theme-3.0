@@ -11,6 +11,10 @@
   "sections": {
     "page-header": {
       "type": "page-header",
+      "custom_css": [
+        "h1 {font-size: 1.6rem; line-height: 1.6rem;}",
+        "a {font-size: 1.2rem; line-height: 0.8rem;}"
+      ],
       "settings": {
       }
     },
@@ -24,13 +28,69 @@
     },
     "main_image_with_text_2_b7CiLU": {
       "type": "main-image-with-text-2",
-      "disabled": true,
       "settings": {
-        "heading": "Lets Get Started!",
-        "para": "Lorem Ispum",
+        "heading": "Bold Knots & Beautiful Marks",
+        "para": "Bantu Knots stand out boldly, vitiligo is a form of art—each part is a masterpiece, created with love and resilience.",
         "button_text": "Shop Now",
         "button_url": "",
         "image": "shopify:\/\/shop_images\/VITI_O_CB_Inside_Large-SQUARE.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976a11",
+        "para_color": "#976a11",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "order": "regular",
+        "row-order": "row-2",
+        "stretch": "true",
+        "button_color": "primary"
+      }
+    },
+    "main_image_with_text_2_pyaMqP": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Embracing Our God-Given Beauty",
+        "para": "In a society that frequently undervalues Black hair and skin, it's important for our children to understand that they are beautiful just as they were created.",
+        "button_text": "Shop Now",
+        "button_url": "",
+        "image": "shopify:\/\/shop_images\/ORIG_T_Inside_Large-SQUARE.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976A11",
+        "para_color": "#976A11",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "order": "reverse",
+        "row-order": "row-1",
+        "stretch": "true",
+        "button_color": "primary"
+      }
+    },
+    "main_image_with_text_2_TyaR64": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Proud Roots: Celebrating the Afro",
+        "para": "Olivia wears her Afro with pride, knowing it represents the strength, beauty, and resilience of her heritage. Her Afro is more than just a hairstyle-it's a statement of confidence, a celebration of her identity and a reminder that she is fearfully and wonderfully made. Each curl tells a story, rooted in a legacy of self-love and empowerment.",
+        "button_text": "Shop Now",
+        "button_url": "",
+        "image": "shopify:\/\/shop_images\/ORIG_O_CB_Inside_Large-SQUARE.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976A11",
+        "para_color": "#976A11",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "order": "regular",
+        "row-order": "row-1",
+        "stretch": "true",
+        "button_color": "primary"
+      }
+    },
+    "main_image_with_text_2_Lr9Ltb": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Tahj's Crown: A Hair Affirmation Journey",
+        "para": "Tahj's hair affirmation book is a celebration of self-love and confidence designed to empower children to embrace their natural hair. Through vibrant illustrations the book encourages young readers to see their hair as a crown. Whether braided, in an Afro, or twisted, Thaj's story inspires kids to take pride in their hair, knowing it's a reflection of their culture, strength, and individuality.",
+        "button_text": "Shop Now",
+        "button_url": "",
+        "image": "shopify:\/\/shop_images\/ORIG_T_Paper_Large-SQUARE.jpg",
         "image_bg": "#e6ad59",
         "heading_color": "#976A11",
         "para_color": "#976A11",
@@ -46,6 +106,9 @@
   "order": [
     "page-header",
     "product",
-    "main_image_with_text_2_b7CiLU"
+    "main_image_with_text_2_b7CiLU",
+    "main_image_with_text_2_pyaMqP",
+    "main_image_with_text_2_TyaR64",
+    "main_image_with_text_2_Lr9Ltb"
   ]
 }
