@@ -78,7 +78,7 @@
         "animate_title": "fadeLeft",
         "animate_img": "fadeRight",
         "order": "regular",
-        "row-order": "row-1",
+        "row-order": "row-2",
         "stretch": "true",
         "button_color": "primary"
       }
