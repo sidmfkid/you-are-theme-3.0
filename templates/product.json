@@ -105,8 +105,8 @@
     "main_callout_kRLgUB": {
       "type": "main-callout",
       "settings": {
-        "heading": "FREE SHIPPING ON ORDERS OVER %75 IN THE US!",
-        "animate_title": "fadeRight",
+        "heading": "FREE SHIPPING ON ORDERS OVER $75 IN THE US!",
+        "animate_title": "fadeUp",
         "animate_img": "fadeLeft"
       }
     }
