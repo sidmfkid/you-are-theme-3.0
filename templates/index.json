@@ -26,8 +26,9 @@
       "type": "main-callout",
       "settings": {
         "heading": "Free shipping on orders of $75 or more in the US!",
+        "image": "shopify://shop_images/AUT_O_Paper_Large_200x200_0a8d2edd-0c12-44e5-beba-6cc0f09be988.jpg",
         "animate_title": "fadeLeft",
-        "animate_img": "fadeLeft"
+        "animate_img": "fadeRight"
       }
     },
     "main_image_with_text_Pd7kBW": {
