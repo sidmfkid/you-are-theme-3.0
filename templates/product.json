@@ -106,7 +106,6 @@
       "type": "main-callout",
       "settings": {
         "heading": "FREE SHIPPING ON ORDERS OVER $75 IN THE US!",
-        "image": "shopify://shop_images/ALB_O_Detail_1_Large_200x200_7ccb2023-4147-40a3-b0a6-2b4061dade9c.png",
         "animate_title": "fadeUp",
         "animate_img": "fadeLeft"
       }
