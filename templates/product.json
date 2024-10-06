@@ -33,7 +33,7 @@
         "para": "Bantu Knots stand out boldly, vitiligo is a form of art—each part is a masterpiece, created with love and resilience.",
         "button_text": "Shop Now",
         "button_url": "",
-        "image": "shopify:\/\/shop_images\/VITI_O_CB_Inside_Large-SQUARE.jpg",
+        "image": "shopify://shop_images/VITI_O_CB_Inside_Large-SQUARE.jpg",
         "image_bg": "#e6ad59",
         "heading_color": "#976a11",
         "para_color": "#976a11",
@@ -52,7 +52,7 @@
         "para": "In a society that frequently undervalues Black hair and skin, it's important for our children to understand that they are beautiful just as they were created.",
         "button_text": "Shop Now",
         "button_url": "",
-        "image": "shopify:\/\/shop_images\/ORIG_T_Inside_Large-SQUARE.jpg",
+        "image": "shopify://shop_images/ORIG_T_Inside_Large-SQUARE.jpg",
         "image_bg": "#e6ad59",
         "heading_color": "#976a11",
         "para_color": "#976a11",
@@ -71,7 +71,7 @@
         "para": "Olivia wears her Afro with pride, knowing it represents the strength, beauty, and resilience of her heritage. Her Afro is more than just a hairstyle-it's a statement of confidence, a celebration of her identity and a reminder that she is fearfully and wonderfully made. Each curl tells a story, rooted in a legacy of self-love and empowerment.",
         "button_text": "Shop Now",
         "button_url": "",
-        "image": "shopify:\/\/shop_images\/ORIG_O_CB_Inside_Large-SQUARE.jpg",
+        "image": "shopify://shop_images/ORIG_O_CB_Inside_Large-SQUARE.jpg",
         "image_bg": "#e6ad59",
         "heading_color": "#976a11",
         "para_color": "#976a11",
@@ -90,7 +90,7 @@
         "para": "Tahj's hair affirmation book is a celebration of self-love and confidence designed to empower children to embrace their natural hair. Through vibrant illustrations the book encourages young readers to see their hair as a crown. Whether braided, in an Afro, or twisted, Thaj's story inspires kids to take pride in their hair, knowing it's a reflection of their culture, strength, and individuality.",
         "button_text": "Shop Now",
         "button_url": "",
-        "image": "shopify:\/\/shop_images\/ORIG_T_Paper_Large-SQUARE.jpg",
+        "image": "shopify://shop_images/ORIG_T_Paper_Large-SQUARE.jpg",
         "image_bg": "#e6ad59",
         "heading_color": "#976a11",
         "para_color": "#976a11",
@@ -101,6 +101,14 @@
         "stretch": "true",
         "button_color": "primary"
       }
+    },
+    "main_callout_kRLgUB": {
+      "type": "main-callout",
+      "settings": {
+        "heading": "FREE SHIPPING ON ORDERS OVER %75 IN THE US!",
+        "animate_title": "fadeRight",
+        "animate_img": "fadeLeft"
+      }
     }
   },
   "order": [
@@ -109,6 +117,7 @@
     "main_image_with_text_2_b7CiLU",
     "main_image_with_text_2_pyaMqP",
     "main_image_with_text_2_TyaR64",
-    "main_image_with_text_2_Lr9Ltb"
+    "main_image_with_text_2_Lr9Ltb",
+    "main_callout_kRLgUB"
   ]
 }
