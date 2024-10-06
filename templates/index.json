@@ -27,7 +27,7 @@
       "settings": {
         "heading": "FREE SHIPPING ON ORDERS OF $75 OR MORE IN THE US!",
         "image": "shopify://shop_images/IMG_9003.jpg",
-        "animate_title": "fadeRight",
+        "animate_title": "fadeLeft",
         "animate_img": "fadeLeft"
       }
     },
