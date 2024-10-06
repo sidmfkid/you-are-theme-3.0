@@ -22,15 +22,6 @@
         "image": "shopify://shop_images/IMG_9003.jpg"
       }
     },
-    "main_callout_mbx7PM": {
-      "type": "main-callout",
-      "settings": {
-        "heading": "Free shipping on orders of $75 or more in the US!",
-        "image": "shopify://shop_images/crayon-10.jpg",
-        "animate_title": "fadeRight",
-        "animate_img": "fadeLeft"
-      }
-    },
     "main_image_with_text_Pd7kBW": {
       "type": "main-image-with-text",
       "disabled": true,
@@ -205,7 +196,6 @@
   },
   "order": [
     "2895d287-d5a6-4a88-b2c4-ef0d1e7e949c",
-    "main_callout_mbx7PM",
     "main_image_with_text_Pd7kBW",
     "main_image_with_text_2_HLd4BG",
     "80e0a61d-c4e0-480c-b8c0-28d2f7870c39",
