@@ -25,7 +25,7 @@
     "main_callout_mbx7PM": {
       "type": "main-callout",
       "settings": {
-        "heading": "FREE SHIPPING ON ORDERS OF $75 OR MORE IN THE US!",
+        "heading": "Free shipping on orders of $75 or more in the US!",
         "image": "shopify://shop_images/IMG_9003.jpg",
         "animate_title": "fadeLeft",
         "animate_img": "fadeLeft"
