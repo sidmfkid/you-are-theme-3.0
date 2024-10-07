@@ -196,14 +196,14 @@
     "main_image_with_text_2_aAWngN": {
       "type": "main-image-with-text-2",
       "settings": {
-        "heading": "Free US shipping!",
-        "para": "Free shipping on orders of $75 or more in the US!",
+        "heading": "Free U.S. shipping!",
+        "para": "Free shipping on orders of $75 or more in the U.S.!",
         "button_text": "Shop Now",
         "button_url": "",
         "image": "shopify://shop_images/IMG_9003.jpg",
         "image_bg": "#e6ad59",
-        "heading_color": "#976A11",
-        "para_color": "#976A11",
+        "heading_color": "#976a11",
+        "para_color": "#976a11",
         "animate_title": "fadeLeft",
         "animate_img": "fadeRight",
         "order": "regular",
