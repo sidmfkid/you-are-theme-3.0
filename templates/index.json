@@ -192,6 +192,25 @@
         "animate_title": "fadeLeft",
         "animate_img": "fadeUp"
       }
+    },
+    "main_image_with_text_2_aAWngN": {
+      "type": "main-image-with-text-2",
+      "settings": {
+        "heading": "Free US shipping!",
+        "para": "Free shipping on orders of $75 or more in the US!",
+        "button_text": "Shop Now",
+        "button_url": "",
+        "image": "shopify://shop_images/IMG_9003.jpg",
+        "image_bg": "#e6ad59",
+        "heading_color": "#976A11",
+        "para_color": "#976A11",
+        "animate_title": "fadeLeft",
+        "animate_img": "fadeRight",
+        "order": "regular",
+        "row-order": "row-1",
+        "stretch": "true",
+        "button_color": "primary"
+      }
     }
   },
   "order": [
@@ -205,6 +224,7 @@
     "0af77f64-006d-41d1-b569-4e1bff53f731",
     "93e8a056-240a-4156-afc3-30f8186c6c24",
     "d16d6038-f52a-4507-ad46-167d3ce84afb",
-    "800b9f4b-821b-4627-972c-db63fd3c4b70"
+    "800b9f4b-821b-4627-972c-db63fd3c4b70",
+    "main_image_with_text_2_aAWngN"
   ]
 }
