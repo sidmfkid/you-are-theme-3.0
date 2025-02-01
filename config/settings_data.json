@@ -126,6 +126,7 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
+    "favicon": "shopify://shop_images/Your_Are_Logo_TM_top_Transparent_Background.png",
     "currency_code_enabled": true,
     "sections": {
       "header": {
