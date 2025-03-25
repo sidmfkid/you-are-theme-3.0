@@ -1,137 +1,175 @@
 .section-footer {
-    @include section-margin;
+  @include section-margin;
 }
 
 .footer {
-    @include section-grid;
-    @include section-padding;
-    place-items: center;
-    &__container {
-        @include section-container;
-        padding: 2.4rem 0;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        gap: 1.6rem;
-        width: 100%;
-        border: 3px solid $dark-yellow-800;
+  @include section-grid;
+  @include section-padding;
+  place-items: center;
+  &__container {
+    @include section-container;
+    padding: 2.4rem 2.4rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1.6rem;
+    width: 100%;
+    border: 3px solid $dark-yellow-800;
+  }
+  &__link-container-center {
+    display: flex;
+    flex-direction: column;
+    // margin: 0 auto;
+    flex-shrink: 1;
+    flex-grow: 2;
+    // flex-basis: content;
+    height: min-content;
+    max-width: 30%;
+
+    a,
+    span {
+      font-family: var(--font-heading-family);
+      font-weight: var(--font-heading-weight);
+      font-size: font-size(regular);
+      text-decoration: none;
+      font-style: normal;
     }
-    &__link-container-center {
-        // margin: 0 auto;
-        flex-shrink: 1;
-        flex-grow: 2;
-        // flex-basis: content;
-        height: min-content;
-        max-width: 30%;
+
+    span {
+      color: $brown-800;
+    }
+  }
+
+  &__link-container {
+    display: flex;
+    flex-direction: column;
+    // margin: 0 auto;
+    // max-width: 30%;
+    flex-shrink: 1;
+    flex-grow: 2;
+    // flex-basis: content;
+    height: min-content;
+  }
+  .social-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    svg {
+      fill: $brown-800;
+    }
+  }
+  .social-link {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.8rem;
+
+    font-size: font-size(regular);
+    line-height: 2.4rem;
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    color: $brown-800;
+  }
+
+  .icon-tiktok {
+    width: auto;
+    height: 3.2rem;
+    display: flex;
+
+    path {
+      width: 100%;
+      height: 100%;
+      transform: scale(1.8);
+    }
+  }
+
+  .social-text {
+    font-size: font-size(regular);
+  }
+  &__link {
+    font-size: font-size(regular);
+    line-height: 2.4rem;
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    color: $brown-800;
+
+    &-title {
+      font-size: font-size(regular);
+      font-family: var(--font-heading-family);
+      font-weight: var(--font-heading-weight);
+      color: $brown-800;
+    }
+  }
+  &__link-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    max-height: 30rem;
+
+    li {
+      max-width: 16rem;
+      font-size: font-size(regular);
+    }
+  }
+  &__logo-container {
+    position: relative;
+    height: min-content;
+    max-width: 30%;
+    flex-grow: 2;
+    flex-shrink: 2;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  &__logo {
+    width: auto;
+    height: 15rem;
+  }
+  &__payment-options {
+    @include section-container;
+  }
+  &__copywrite {
+    @include section-container;
+  }
+  @include media-medium {
+    padding: 4rem 0rem;
+    &__container {
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 2.4rem 1.6rem;
+      justify-content: start;
+    }
+    &__logo-container {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    &__logo {
+      height: 10rem;
     }
 
     &__link-container {
-        // margin: 0 auto;
-        max-width: 30%;
-        flex-shrink: 1;
-        flex-grow: 2;
-        // flex-basis: content;
-        height: min-content;
+      border-bottom: 1px solid $dark-yellow-800;
+      padding-bottom: 2.4rem;
     }
-    .social-icon {
-        width: 3.2rem;
-        height: 3.2rem;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        svg {
-            fill: $brown-800;
-        }
-    }
-    .social-link {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        gap: 0.8rem;
 
-        font-size: 2.1rem;
-        line-height: 2.4rem;
-        font-family: var(--font-heading-family);
-        font-weight: var(--font-heading-weight);
-        color: $brown-800;
-    }
-    .icon-tiktok {
-        width: auto;
-        height: 3.2rem;
-        display: flex;
-
-        path {
-            width: 100%;
-            height: 100%;
-            transform: scale(1.8);
-        }
-    }
-    &__link {
-        font-size: 2.1rem;
-        line-height: 2.4rem;
-        font-family: var(--font-heading-family);
-        font-weight: var(--font-heading-weight);
-        color: $brown-800;
+    &__link-container-center {
+      min-width: 100%;
     }
     &__link-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.6rem;
-        li {
-            width: 100%;
-        }
+      //   width: fit-content;
+      //   li {
+      //     text-align: center;
+      //   }
     }
-    &__logo-container {
-        position: relative;
-        height: min-content;
-        max-width: 30%;
-        flex-grow: 2;
-        flex-shrink: 2;
 
-        display: flex;
-        justify-content: start;
-        align-items: center;
+    .social-link {
+      justify-content: start;
     }
-    &__logo {
-        width: auto;
-        height: 15rem;
-    }
-    &__payment-options {
-        @include section-container;
-    }
-    &__copywrite {
-        @include section-container;
-    }
-    @include media-medium {
-        padding: 4rem 0rem;
-        &__container {
-            flex-wrap: wrap;
-            gap: 2.4rem 1.6rem;
-        }
-        &__logo-container {
-            width: 100%;
-            max-width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        &__logo {
-            height: 10rem;
-        }
-        &__link-container,
-        &__link-container-center {
-            width: calc(50% - 5rem);
-            max-width: calc(50% - 5rem);
-        }
-        &__link-list {
-            width: fit-content;
-            li {
-                text-align: center;
-            }
-        }
-
-        .social-link {
-            text-align: center;
-            justify-content: center;
-        }
-    }
+  }
 }

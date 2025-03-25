@@ -1,0 +1,48 @@
+<section class="section-collection">
+  <div class="collection">
+    <div class="collection__container">
+      <ul class="collection__products">
+        {% for item in collection.products %}
+          <li class="collection__item">
+            <a href="{{ item.url }}" class="collection__link">
+              {% if item.image %}
+                {{ item.image | image_url: width: 300, height: 300 | image_tag: class: 'collection__item-image' }}
+
+              {% elsif item.featured_image %}
+                {{
+                  item.featured_image
+                  | image_url: width: 300, height: 300
+                  | image_tag: class: 'collection__item-image'
+                }}
+              {% endif %}
+            </a>
+            <h3 class="collection__item-title">
+              {{ item.title }}
+            </h3>
+
+            <span class="collection__item-price">
+              {% if item.price_varies %}
+                From {{ item.price_min | money }}
+              {% else %}
+                {{ item.price | money }}
+              {% endif %}
+            </span>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection",
+  "class": "section-collection",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Collection"
+    }
+  ]
+}
+{% endschema %}

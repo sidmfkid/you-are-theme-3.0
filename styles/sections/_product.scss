@@ -87,6 +87,20 @@
     height: auto;
     width: 100%;
   }
+
+  &__errors {
+    background-color: red;
+    padding: 0 1.6rem;
+    border-radius: 10px;
+
+    &-message {
+      @include page-para;
+      color: $brown-100;
+    }
+  }
+
+
+
   &__content {
     height: min-content;
     display: flex;

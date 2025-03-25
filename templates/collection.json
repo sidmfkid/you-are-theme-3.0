@@ -3,7 +3,11 @@
     "page-header": {
       "type": "page-header",
       "settings": {}
+    },
+    "collection": {
+      "type": "collection",
+      "settings": {}
     }
   },
-  "order": ["page-header"]
+  "order": ["page-header", "collection"]
 }

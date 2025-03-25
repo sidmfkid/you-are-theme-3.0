@@ -1,0 +1,38 @@
+<section class="section-collections">
+  <div class="collections">
+    <div class="collections__container">
+      <ul class="collections__list">
+        {% for item in collections %}
+          <li class="collections__item-container">
+            <a class="collections__item" href="{{ item.url }}">
+              {% if item.image %}
+                {{ item.image | image_url: width: 800 | image_tag: class: 'collections__image' }}
+
+              {% elsif item.featured_image %}
+                {{ item.featured_image | image_url: width: 800 | image_tag: class: 'collections__image' }}
+              {% endif %}
+              <div class="collections__title">
+                <h3 class="title">
+                  {{ item.title }}
+                </h3>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collections",
+  "class": "section-collections",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Collections"
+    }
+  ]
+}
+{% endschema %}

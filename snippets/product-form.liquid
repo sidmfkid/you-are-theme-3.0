@@ -7,6 +7,15 @@
   data-type: 'add-to-cart-form'
 %}
   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+{% if form.errors %}
+
+  <div class="product__errors">
+    <span class="product__errors-message">
+     Somthing went wrong: {{ form.errors |  default_errors }} 
+    </span>
+    </div>
+
+{% endif %}
 
   <div class="product__selectors">
     <quantity-input class="product__quantity">
@@ -30,12 +39,15 @@
         </button>
       </div>
     </quantity-input>
+
+
     <variant-selects
       data-section="{{ section.id }}"
       data-url="{{ product.url }}"
       class="product__variant"
     >
       <label class="product__variant-label" for="variant-{{ section.id }}">Select Variant</label>
+
       <select
         value="{{ product.first_available_variant.id }}"
         class="product__variant-select"
